@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<!--?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?-->
+
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Front_java.Torsadage.loading.RemplirPause">
+   <children>
+      <AnchorPane prefHeight="515.0" prefWidth="611.0" style=" -fx-border-color: black; -fx-border-width: 1;" stylesheets="@RemplirPause.css">
+         <children>
+            <Label layoutX="125.0" layoutY="30.0" style="-fx-text-fill:#023770" text="Veuillez compléter tous les champs ">
+              <font>
+                <Font name="Arial Rounded MT Bold" size="20.0" />
+              </font>       
+            </Label>
+            <Button fx:id="btnTerminer" layoutX="340.0" layoutY="450.0" mnemonicParsing="false" onAction="#terminerChargement" styleClass="terminer" text="Terminer" />
+            <!-- Button fx:id="close" layoutX="435.0" layoutY="10.0" mnemonicParsing="false" onAction="#closeFenetre2" prefWidth="50.0" styleClass="close" stylesheets="@RemplirQuantitieAtteintAvantCodeB.css">
+              <graphic>
+               <FontAwesomeIcon glyphName="CLOSE" size="1.2em" /
+               </graphic>
+            </Button>-->
+            <Label layoutX="100.0" layoutY="70.0" style="-fx-text-fill:#023770" text="obligatoires avant de prendre une pause">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="205.0" layoutY="350.0" prefHeight="41.0" prefWidth="194.0" styleClass="labelQuantiteAtteint" text="Quantité  atteinte  : " />
+			<TextField fx:id="quantiteAtteint" layoutX="390.0" layoutY="356.0" prefHeight="47.0" prefWidth="200.0" styleClass="quantiteTextFiled" />
+            <Button fx:id="btnAnnuler" layoutX="200.0" layoutY="450.0" mnemonicParsing="false" onAction="#annuler" styleClass="annuler" text="Annuler" />
+            <Label layoutX="70.0" layoutY="144.0" styleClass="labelQuantiteAtteint" text="Longueur final a la fin de commande  :" />
+            <Label layoutX="60.0" layoutY="190.0" styleClass="labelQuantiteAtteint" text="Longueur de pas a la fin de commande : " />
+            <Label layoutX="60.0" layoutY="242.0" styleClass="labelQuantiteAtteint" text="Décalage max a la fin de commande C1 :" />
+            <Label layoutX="60.0" layoutY="292.0" styleClass="labelQuantiteAtteint" text="Décalage max a la fin de commande C2 :" />
+            <TextField fx:id="longueurFinCommande" layoutX="390.0" layoutY="140.0" prefWidth="176.0" styleClass="quantiteTextFiled" />
+            <TextField fx:id="longueurPasFinCommande" layoutX="390.0" layoutY="195.0" styleClass="quantiteTextFiled" />
+            <TextField fx:id="decalageMaxC1" layoutX="390.0" layoutY="247.0" styleClass="quantiteTextFiled" />
+            <TextField fx:id="decalageMaxC2" layoutX="390.0" layoutY="301.0" styleClass="quantiteTextFiled" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

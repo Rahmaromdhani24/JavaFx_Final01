@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+
+<StackPane fx:id="stackPane" prefWidth="1360.0" stylesheets="@SelectionSertissageNormal.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Front_java.SertissageNormal.SelectionSertissageNormal">
+
+    <BorderPane fx:id="rootPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1360.0">
+ 
+   <top>
+      <HBox prefHeight="142.0" prefWidth="1297.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="290.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../ressources/logo_leoni.jpg" />
+               </image>
+            </ImageView>
+            <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="145.0" prefWidth="1015.0">
+               <children>
+                  <Pane layoutY="38.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="75.0" prefWidth="1055.0" style="-fx-background-color: #D9D9D9;">
+                     <children>
+                        <Button layoutX="5.0" layoutY="18.0" mnemonicParsing="false" prefWidth="30.0" styleClass="nomPrenom">
+                         <graphic>
+                        <FontAwesomeIcon glyphName="USER" size="2.7em" />
+                     </graphic>
+                        </Button>
+                        <Label fx:id="nomPrenomUser" layoutX="42.0" layoutY="30.0" text="">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="220.0" layoutY="30.0" text="Matricule :">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="matriculeUser" layoutX="320.0" layoutY="30.0" text="">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="400.0" layoutY="30.0" text="Plant :">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="plantUser" layoutX="460.0" layoutY="30.0" text="">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="670.0" layoutY="30.0" text="Poste : ">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="posteUser" layoutX="730.0" layoutY="30.0" text="">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="820.0" layoutY="30.0" text="Opération :">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="operationUser" layoutX="909.0" layoutY="30.0" text="">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnLogout" layoutX="1003.0" layoutY="25.0" mnemonicParsing="false" onAction="#logout" prefWidth="50.0" styleClass="logout">
+                         <graphic>
+                        <FontAwesomeIcon glyphName="SIGN_OUT" size="2.5em" />
+                     </graphic>
+                     </Button>
+                        <Button fx:id="btnClose" layoutX="1000.0" layoutY="-35.0" mnemonicParsing="false" onAction="#close" prefHeight="24.0" prefWidth="57.0" styleClass="close">
+                         <graphic>
+                        <FontAwesomeIcon glyphName="CLOSE" size="1.5em" />
+                     </graphic>
+                     </Button>
+                        <Button fx:id="btnMinimize" layoutX="950.0" layoutY="-35.0" mnemonicParsing="false" onAction="#minimize" prefHeight="24.0" prefWidth="57.0" styleClass="minimize">
+                         <graphic>
+                       <FontAwesomeIcon glyphName="MINUS" size="1.5em" />
+                   </graphic>
+                   </Button>
+                        <Label layoutX="528.0" layoutY="30.0" text="Segment :">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="segementUser" layoutX="613.0" layoutY="30.0">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <Pane prefHeight="72.0" prefWidth="1360.0" BorderPane.alignment="CENTER" />
+   </bottom>
+      <center>
+         <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+            <Pane layoutX="110.0" layoutY="125.0" prefHeight="50.0" prefWidth="245.0" style="-fx-background-color: #023770;" styleClass="radiusBtn">
+               <children>
+                  <Label layoutX="60.0" layoutY="12.0" text="Choisir projet " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <ComboBox fx:id="listeProjets" layoutX="500.0" layoutY="130.0" prefHeight="25.0" prefWidth="200.0" styleClass="liste-projets-combo" />
+            <ComboBox fx:id="listeCodeControle" layoutX="500.0" layoutY="400.0" prefWidth="200.0" styleClass="liste-codeControle-combo" />
+            <ComboBox fx:id="listeSectionFil" layoutX="500.0" layoutY="330.0" prefWidth="200.0" styleClass="liste-sectionFil-combo" />
+            <Pane layoutX="21.0" layoutY="636.0" prefHeight="50.0" prefWidth="350.0" styleClass="rectngleDateHeure">
+               <children>
+                  <Label fx:id="dateSystem" layoutX="42.0" layoutY="12.0" text="" textFill="#000000">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="heureSystem" layoutX="228.0" layoutY="12.0" text="" textFill="#000000">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="110.0" layoutY="330.0" prefHeight="50.0" prefWidth="245.0" style="-fx-background-color: #023770;" styleClass="radiusBtn">
+               <children>
+                  <Label layoutX="20.0" layoutY="12.0" text="Sélectionner Section Fil" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="descriptionCode" layoutX="28.0" layoutY="551.0" prefHeight="80.0" prefWidth="1300.0" styleClass="descriptionCodes">
+               <children>
+                  <Label fx:id="code1" layoutX="10.0" layoutY="17.0" text="">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                   </Label>
+                  <Label fx:id="code2" layoutX="510.0" layoutY="17.0" text="">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                   </Label>
+                  <Label fx:id="code3" layoutX="900.0" layoutY="17.0" text="">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                   </Label>
+                  <Label fx:id="code4" layoutX="10.0" layoutY="50.0" text="">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                   </Label>
+                  <Label fx:id="code5" layoutX="510.0" layoutY="50.0" text="">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                   </Label>
+                   <Label fx:id="code6" layoutX="900.0" layoutY="50.0" text="">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                   </Label>
+                  <Label fx:id="description1" layoutX="20.0" layoutY="17.0" text="">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="description2" layoutX="520.0" layoutY="17.0" text="">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="description4" layoutX="20.0" layoutY="50.0" text="">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="description5" layoutX="520.0" layoutY="50.0" text="">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="description6" layoutX="900.0" layoutY="50.0" text="">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="description3" layoutX="900.0" layoutY="17.0" text="">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+               </Pane>
+               <Pane layoutX="110.0" layoutY="190.0" prefHeight="50.0" prefWidth="245.0" style="-fx-background-color: #023770;" styleClass="radiusBtn">
+                  <children>
+                     <Label layoutX="10.0" layoutY="12.0" text="    Saisir  Numéro outil" textFill="WHITE">
+                        <font>
+                           <Font name="System Bold" size="18.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+               <TextField fx:id="searchField" layoutX="500.0" layoutY="190.0" prefWidth="200.0" promptText="🔍 Rechercher..." styleClass="search-field" />
+               <Pane layoutX="110.0" layoutY="260.0" prefHeight="50.0" prefWidth="245.0" style="-fx-background-color: #023770;" styleClass="radiusBtn">
+                  <children>
+                     <Label layoutX="5.0" layoutY="12.0" text="        Numéro de contact" textFill="WHITE">
+                        <font>
+                           <Font name="System Bold" size="18.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+               <ComboBox fx:id="listeContacts" layoutX="500.0" layoutY="255.0" prefWidth="200.0" styleClass="liste-projets-combo" />
+            <Pane layoutX="110.0" layoutY="400.0" prefHeight="50.0" prefWidth="245.0" style="-fx-background-color: #023770;" styleClass="radiusBtn">
+               <children>
+                  <Label layoutX="20.0" layoutY="12.0" text="Choisir code de  contrôle" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button fx:id="btnSuivant" layoutX="350.0" layoutY="490.0" mnemonicParsing="false" onAction="#submit" prefHeight="50.0" prefWidth="150.0" style="-fx-alignment: center;" styleClass="suivant-btn" text="Suivant">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+     <GridPane alignment="CENTER" hgap="10.0" layoutX="800.0" layoutY="100.0" prefHeight="440.0" prefWidth="500.0" vgap="10.0" BorderPane.alignment="CENTER">
+    <columnConstraints>
+        <ColumnConstraints prefWidth="70.0" />
+        <ColumnConstraints prefWidth="70.0" />
+        <ColumnConstraints prefWidth="70.0" />
+        <ColumnConstraints prefWidth="70.0" />
+        <ColumnConstraints prefWidth="70.0" />
+        <ColumnConstraints prefWidth="70.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints prefHeight="70.0" />
+        <RowConstraints prefHeight="70.0" />
+        <RowConstraints prefHeight="70.0" />
+        <RowConstraints prefHeight="70.0" />
+        <RowConstraints prefHeight="70.0" />
+        <RowConstraints prefHeight="70.0" />
+    </rowConstraints>
+
+          <!-- Ligne 1 -->
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="1" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="2" GridPane.columnIndex="1" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="3" GridPane.columnIndex="2" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="4" GridPane.columnIndex="3" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="5" GridPane.columnIndex="4" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="6" GridPane.columnIndex="5" />
+
+          <!-- Ligne 2 -->
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="7" GridPane.rowIndex="1" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="A" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="B" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="C" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+
+          <!-- Ligne 3 -->
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="D" GridPane.rowIndex="2" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="E" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="F" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="G" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="H" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="I" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+
+          <!-- Ligne 4 -->
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="J" GridPane.rowIndex="3" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="K" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="L" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="M" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="N" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="O" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+
+          <!-- Ligne 5 -->
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="P" GridPane.rowIndex="4" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="Q" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="R" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="S" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="T" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+    <Button onAction="#handleButtonClick" styleClass="keypad-button" text="U" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+
+          <!-- Ligne 6 -->
+  <Button onAction="#handleButtonClick" styleClass="keypad-button1" text="0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+  <Button onAction="#handleButtonClick" styleClass="keypad-button" text="." GridPane.columnIndex="2" GridPane.columnSpan="1" GridPane.rowIndex="5" />
+  <Button onAction="#handleButtonClick" styleClass="keypad-button" text="-" GridPane.columnIndex="3" GridPane.columnSpan="1" GridPane.rowIndex="5" />
+  <Pane prefHeight="65.0" prefWidth="129.0" styleClass="keypad-button1" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="5">
+                     <children>
+      
+                     <ImageView fx:id="clearImage" fitHeight="57.0" fitWidth="104.0" layoutX="45.0" layoutY="3.5" pickOnBounds="true" preserveRatio="true" styleClass="keypad-image">
+          <image>
+              <Image url="@../../../ressources/echec.png" />
+          </image>
+      </ImageView>
+                     </children>
+                  </Pane>
+
+      
+        
+      </GridPane>
+
+      
+                  </children>
+         </AnchorPane>
+      </center>
+</BorderPane>
+</StackPane>

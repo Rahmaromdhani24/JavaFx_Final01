@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<!--?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?-->
+
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" 
+prefWidth="500.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+ fx:controller="Front_java.SertissageIDC.loading.LoadingSertissageIDC">
+   <children>
+      <AnchorPane prefHeight="150.0" prefWidth="150.0"
+                        style=" -fx-border-color: black; -fx-border-width: 1;">
+      
+         <children>
+              <ProgressIndicator fx:id="progressIndicator" layoutX="233.0" layoutY="132.0" progress="-1.0" />
+            <Label layoutX="125.0" layoutY="242.0" text="Commande en cours ......">
+              <font>
+                <Font name="Berlin Sans FB" size="30.0" />
+              </font>       
+             </Label>
+            <Button fx:id="btnPause" layoutX="130.0" layoutY="400.0" mnemonicParsing="false" onAction="#pauseChargement" text="Pause" />
+            <Button fx:id="btnTerminer" layoutX="300.0" layoutY="400.0" mnemonicParsing="false" onAction="#terminerChargement" text="Terminer" />
+            <Button fx:id="close" layoutX="435.0" layoutY="10.0" onAction="#closeFenetre2" mnemonicParsing="false" prefWidth="50.0" styleClass="close" stylesheets="@LoadingSertissageIDC.css">
+              <graphic>
+               <FontAwesomeIcon glyphName="CLOSE" size="1.2em" />
+               </graphic>
+             </Button>
+        
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

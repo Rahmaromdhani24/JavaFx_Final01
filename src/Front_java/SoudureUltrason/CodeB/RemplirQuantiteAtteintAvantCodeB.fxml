@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<!--?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?-->
+
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Front_java.SoudureUltrason.CodeB.RemplirQuantitieAtteintAvantCodeB">
+   <children>
+      <AnchorPane prefHeight="150.0" prefWidth="150.0" style=" -fx-border-color: black; -fx-border-width: 1;">
+         <children>
+            <Label layoutX="59.0" layoutY="100.0" text="Veuillez remplir le champ 'Quantité atteinte' " style="-fx-text-fill:#023770">
+              <font>
+                <Font name="Berlin Sans FB" size="22.0" />
+              </font>       
+            </Label>
+            <Button fx:id="btnTerminer" layoutX="270.0" layoutY="420.0" mnemonicParsing="false" onAction="#terminerChargement" styleClass="terminer" stylesheets="@RemplirQuantitieAtteintAvantCodeB.css" text="Terminer" />
+            <!-- Button fx:id="close" layoutX="435.0" layoutY="10.0" mnemonicParsing="false" onAction="#closeFenetre2" prefWidth="50.0" styleClass="close" stylesheets="@RemplirQuantitieAtteintAvantCodeB.css">
+              <graphic>
+               <FontAwesomeIcon glyphName="CLOSE" size="1.2em" /
+               </graphic>
+            </Button>-->
+            <Label layoutX="65.0" layoutY="152.0" text="de numéro de cycle" style="-fx-text-fill:#023770">
+               <font>
+                  <Font name="Berlin Sans FB" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="82.0" layoutY="274.0" styleClass="labelQuantiteAtteint" stylesheets="@RemplirQuantitieAtteintAvantCodeB.css" text="Quantité atteinte : " />
+			<TextField fx:id="quantiteAtteintAncien" layoutX="254.0" layoutY="271.0" prefHeight="47.0" prefWidth="200.0" styleClass="quantiteTextFiled" stylesheets="@RemplirQuantitieAtteintAvantCodeB.css" />
+            <Label fx:id="numCycleAncien" layoutX="245.0" layoutY="152.0" style="-fx-text-fill:#023770">
+               <font>
+                  <Font name="Berlin Sans FB" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="275.0" layoutY="152.0" text="avant de procéder" style="-fx-text-fill:#023770">
+               <font>
+                  <Font name="Berlin Sans FB" size="22.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnAnnuler" layoutX="135.0" layoutY="420.0" mnemonicParsing="false" onAction="#annuler" styleClass="annuler" stylesheets="@RemplirQuantitieAtteintAvantCodeB.css" text="Annuler" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

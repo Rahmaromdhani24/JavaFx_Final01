@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" 
+           prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/23.0.1" 
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="Front_java.SertissageIDC.loading.ChoisirCodeControles">
+   <children>
+      <AnchorPane prefHeight="150.0" prefWidth="150.0" 
+                  style=" -fx-border-color: black; -fx-border-width: 1;" stylesheets="@ChoisirCodeControles.css">
+         <children>
+            <Label layoutX="62.0" layoutY="129.0" text="Veuillez sélectionner un code de contrôle :">
+              <font>
+                <Font name="Berlin Sans FB" size="22.0" />
+              </font>       
+            </Label>
+            <Button fx:id="btnTerminer" layoutX="200.0" layoutY="413.0" mnemonicParsing="false" onAction="#terminerChargement" text="Terminer" />
+            <Button fx:id="close" layoutX="435.0" layoutY="10.0" mnemonicParsing="false"  prefWidth="50.0" styleClass="close" >
+              <graphic>
+               <!--FontAwesomeIcon glyphName="CLOSE" size="1.2em" /-->
+               </graphic>
+            </Button>
+            <ComboBox fx:id="listeCodeControle" layoutX="150.0" layoutY="238.0" prefWidth="200.0" styleClass="liste-codeControle-combo" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+
+<StackPane fx:id="stackPane" prefHeight="774.0" prefWidth="1360.0" stylesheets="@ResultatSertissageNormal.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Front_java.SertissageNormal.ResultatSertissageNormal">
+           
+               <BorderPane fx:id="rootPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1360.0">
+
+ 
+    <top>
+      <HBox prefHeight="142.0" prefWidth="1297.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="290.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../ressources/logo_leoni.jpg" />
+               </image>
+            </ImageView>
+            <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="145.0" prefWidth="1015.0">
+               <children>
+                  <Pane layoutY="38.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="75.0" prefWidth="1055.0" style="-fx-background-color: #D9D9D9;">
+                     <children>
+                        <Button layoutX="5.0" layoutY="18.0" mnemonicParsing="false" prefWidth="30.0" styleClass="nomPrenom">
+                         <graphic>
+                        <FontAwesomeIcon glyphName="USER" size="2.7em" />
+                     </graphic>
+                        </Button>
+                        <Label fx:id="nomPrenomUser" layoutX="42.0" layoutY="30.0" text="">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="220.0" layoutY="30.0" text="Matricule :">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="matriculeUser" layoutX="320.0" layoutY="30.0" text="">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="400.0" layoutY="30.0" text="Plant :">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="plantUser" layoutX="460.0" layoutY="30.0" text="">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="670.0" layoutY="30.0" text="Poste : ">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="posteUser" layoutX="730.0" layoutY="30.0" text="">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="820.0" layoutY="30.0" text="Opération :">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="operationUser" layoutX="909.0" layoutY="30.0" text="">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnLogout" layoutX="1003.0" layoutY="25.0" mnemonicParsing="false" onAction="#logout" prefWidth="50.0" styleClass="logout">
+                         <graphic>
+                        <FontAwesomeIcon glyphName="SIGN_OUT" size="2.5em" />
+                     </graphic>
+                     </Button>
+                        <Button fx:id="btnClose" layoutX="1000.0" layoutY="-35.0" mnemonicParsing="false" onAction="#close" prefHeight="24.0" prefWidth="57.0" styleClass="close">
+                         <graphic>
+                        <FontAwesomeIcon glyphName="CLOSE" size="1.5em" />
+                     </graphic>
+                     </Button>
+                        <Button fx:id="btnMinimize" layoutX="950.0" layoutY="-35.0" mnemonicParsing="false" onAction="#minimize" prefHeight="24.0" prefWidth="57.0" styleClass="minimize">
+                         <graphic>
+                       <FontAwesomeIcon glyphName="MINUS" size="1.5em" />
+                   </graphic>
+                   </Button>
+                        <Label layoutX="528.0" layoutY="30.0" text="Segment :">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="segementUser" layoutX="613.0" layoutY="30.0">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <Pane prefHeight="72.0" prefWidth="1360.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="20.0" layoutY="20.0" prefHeight="50.0" prefWidth="350.0" styleClass="rectngleDateHeure">
+               <children>
+                  <Label fx:id="dateSystem" layoutX="42.0" layoutY="12.0" text="" textFill="#000000">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="heureSystem" layoutX="228.0" layoutY="12.0" text="" textFill="#000000">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button fx:id="btnSuivant" layoutX="1100.0" layoutY="11.0" mnemonicParsing="false" onAction="#suivant" prefHeight="50.0" prefWidth="150.0" style="-fx-alignment: center;" styleClass="suivant-btn" text="Suivant">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </bottom>
+      <center>
+         <AnchorPane prefHeight="514.0" prefWidth="1300.0" stylesheets="@ResultatSertissageNormal.css" BorderPane.alignment="CENTER">
+            <children>
+               <Label layoutX="108.0" layoutY="30.0" text="Projet :">
+                <font>
+                              <Font name="System" size="16.0" />
+                           </font>
+                        </Label>
+               <Label fx:id="nomProjet" layoutX="160.0" layoutY="30.0">
+                <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+               <Label layoutX="320.0" layoutY="30.0" text="Séction de fil  :">
+                <font>
+                              <Font name="System" size="16.0" />
+                           </font>
+                        </Label>
+               <Label fx:id="sectionFil" layoutX="431.0" layoutY="30.0">
+                <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+               <Label layoutX="1100.0" layoutY="30.0" text="Code de controle : ">
+                <font>
+                              <Font name="System" size="16.0" />
+                           </font>
+                        </Label>
+               <Label fx:id="codeControleSelectionner" layoutX="1240.0" layoutY="30.0">
+                <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+               <Label layoutX="840.0" layoutY="30.0" text="Numéro d'outil : ">
+                <font>
+                      <Font name="System" size="16.0" />
+                 </font>
+               </Label>
+               <Label fx:id="numOutil" layoutX="960.0" layoutY="30.0">
+                <font>
+                    <Font name="System Bold" size="16.0" />
+                 </font>
+              </Label>
+               <!--Label layoutX="500.0" layoutY="73.0" styleClass="matrix-grid-title" text="Numéro Courant : " />
+               <Label fx:id="nbrCycle" layoutX="700.0" layoutY="73.0" styleClass="matrix-grid-title" text="" /-->             
+               <Label layoutX="560.0" layoutY="30.0" text="Numéro Contact :">
+                  <font>
+                     <Font size="16.0" />
+                  </font>
+               </Label>
+               <Label fx:id="numContact" layoutX="690.0" layoutY="30.0">
+                  <font>
+                     <Font name="System Bold" size="16.0" />
+                  </font>
+               </Label>
+               <Label layoutX="500.0" layoutY="55.0" styleClass="matrix-grid-title" text="Numéro Courant : " />
+               <Label fx:id="nbrCycle" layoutX="700.0" layoutY="55.0" styleClass="matrix-grid-title" text="" />
+          <GridPane hgap="2" layoutX="53.0" layoutY="98.0" prefHeight="486.0" prefWidth="873.0" style="-fx-padding: 1px; -fx-border-color: gray; -fx-border-width: 2px; -fx-grid-lines-visible: true;" vgap="2">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+    <Label prefHeight="17.0" prefWidth="139.0" styleClass="labelll" text="Échantillon 1" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></Label>
+    <Label prefHeight="17.0" prefWidth="139.0" style="-fx-font-weight: bold;" styleClass="labelll" text=" Échantillon 2" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></Label>
+    <Label prefHeight="17.0" prefWidth="145.0" style="-fx-font-weight: bold;" styleClass="labelll" text="Échantillon 3" GridPane.columnIndex="4">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></Label>
+    <Label prefHeight="17.0" prefWidth="154.0" style="-fx-font-weight: bold;" styleClass="labelll" text=" Échantillon Fin" GridPane.columnIndex="5">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></Label>
+  
+    <Label styleClass="labelll" text="                     Produit " GridPane.columnIndex="1" GridPane.rowIndex="5" />
+    <Label prefHeight="17.0" prefWidth="205.0" styleClass="labelll" text="                     Série Produite" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Pane prefHeight="47.0" prefWidth="144.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <children>
+                        <Label fx:id="hauteurSertissageEch1" layoutX="45.0" layoutY="3.0" styleClass="labelll2" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="hauteurSertissageEch11" layoutX="47.0" layoutY="15.0" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="47.0" prefWidth="146.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                     <children>
+                        <Label fx:id="hauteurSertissageEchFin" layoutX="61.0" layoutY="3.0" styleClass="labelll2" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <children>
+                        <Label fx:id="hauteurSertissageEch3" layoutX="45.0" layoutY="3.0" styleClass="labelll2" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="47.0" prefWidth="141.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <children>
+                        <Label fx:id="hauteurSertissageEch2" layoutX="45.0" layoutY="3.0" styleClass="labelll2" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                     <children>
+                        <Label fx:id="largeurSertissageEchFin" layoutX="61.0" layoutY="3.0" styleClass="labelll2" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                     <children>
+                        <Label fx:id="hauteurIsolantEchFin" layoutX="61.0" layoutY="3.0" styleClass="labelll2" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                     <children>
+                        <Label fx:id="largeurIsolantEchFin" layoutX="61.0" layoutY="3.0" styleClass="labelll2" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="31.0" prefWidth="149.0" styleClass="labelll2" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                     <children>
+                        <Label fx:id="tractionEchFin" layoutX="61.0" layoutY="3.0" styleClass="labelll2" />
+                     </children>
+                  </Pane>
+                  <columnConstraints>
+                     <ColumnConstraints maxWidth="252.0" minWidth="101.0" prefWidth="101.0" />
+                     <ColumnConstraints maxWidth="350.0" minWidth="145.0" prefWidth="219.0" />
+                     <ColumnConstraints maxWidth="144.0" minWidth="37.0" prefWidth="128.0" />
+                     <ColumnConstraints />
+                     <ColumnConstraints maxWidth="146.0" minWidth="134.0" prefWidth="134.0" />
+                     <ColumnConstraints maxWidth="154.0" minWidth="142.0" prefWidth="154.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints maxHeight="50.0" minHeight="44.0" prefHeight="45.0" />
+                     <RowConstraints maxHeight="63.0" minHeight="39.0" prefHeight="47.0" />
+                     <RowConstraints maxHeight="61.0" minHeight="19.0" prefHeight="46.0" />
+                     <RowConstraints maxHeight="54.0" minHeight="1.0" prefHeight="48.0" />
+                     <RowConstraints maxHeight="54.0" minHeight="12.0" prefHeight="44.0" />
+                     <RowConstraints maxHeight="56.0" minHeight="17.0" prefHeight="53.0" />
+                     <RowConstraints maxHeight="63.0" minHeight="3.0" prefHeight="3.0" />
+                     <RowConstraints maxHeight="40.0" minHeight="50.0" prefHeight="40.0" />
+                     <RowConstraints maxHeight="40.0" minHeight="50.0" prefHeight="40.0" />
+                     <RowConstraints maxHeight="40.0" minHeight="50.0" prefHeight="40.0" />
+                  </rowConstraints>
+
+</GridPane>
+               <Pane layoutX="53.0" layoutY="69.0" prefHeight="78.0" prefWidth="319.0" style="-fx-background-color: #f4f4f4;">
+                  <children>
+                     <Pane layoutX="2.0" layoutY="224.0" prefHeight="50.0" prefWidth="320.0" style="-fx-border-color: gray; -fx-border-width: 2px; -fx-background-color: #f4f4f4;">
+                        <children>
+                           <Label layoutX="6.0" layoutY="13.0" prefHeight="21.0" prefWidth="165.0" text="Largeur Isolant :Tol / :">
+                              <font>
+                                 <Font name="System Bold" size="15.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="labelLargeurIsolant" layoutX="168.0" layoutY="13.0" text="Label">
+                              <font>
+                                 <Font name="System Bold" size="15.0" />
+                              </font></Label>
+                        </children>
+                     </Pane>
+                     <Pane layoutX="2.0" layoutY="176.0" prefHeight="50.0" prefWidth="320.0" style="-fx-border-color: gray; -fx-border-width: 2px; -fx-background-color: #f4f4f4;">
+                        <children>
+                           <Label layoutX="7.0" layoutY="13.0" prefHeight="21.0" prefWidth="160.0" text="Hauteur isolant /Tol : ">
+                              <font>
+                                 <Font name="System Bold" size="15.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="labelHauteurIsolant" layoutX="160.0" layoutY="13.0" text="Label">
+                              <font>
+                                 <Font name="System Bold" size="15.0" />
+                              </font></Label>
+                        </children>
+                     </Pane>
+                     <Pane layoutX="2.0" layoutY="127.0" prefHeight="50.0" prefWidth="320.0" style="-fx-border-color: gray; -fx-border-width: 2px; -fx-background-color: #f4f4f4;">
+                        <children>
+                           <Label layoutX="5.0" layoutY="13.0" prefHeight="21.0" prefWidth="203.0" text="Largeur de sertissage / Tol : ">
+                              <font>
+                                 <Font name="System Bold" size="15.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="labelLargeurSertissage" layoutX="205.0" layoutY="13.0" text="Label">
+                              <font>
+                                 <Font name="System Bold" size="15.0" />
+                              </font></Label>
+                        </children>
+                     </Pane>
+                     <Pane layoutX="2.0" layoutY="78.0" prefHeight="50.0" prefWidth="320.0" style="-fx-border-color: gray; -fx-border-width: 2px; -fx-background-color: #f4f4f4;">
+                        <children>
+                           <Label layoutX="6.0" layoutY="13.0" prefHeight="21.0" prefWidth="207.0" text="Hauteur de sertissage / Tol :">
+                              <font>
+                                 <Font name="System Bold" size="15.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="labelHauteurSertissage" layoutX="204.0" layoutY="13.0" text="Label">
+                              <font>
+                                 <Font name="System Bold" size="15.0" />
+                              </font></Label>
+                        </children>
+                     </Pane>
+                  </children></Pane>
+               <Pane layoutX="55.0" layoutY="338.0" prefHeight="50.0" prefWidth="321.0" style="-fx-border-color: gray; -fx-border-width: 2px; -fx-background-color: #f4f4f4;">
+                  <children>
+                     <Label layoutX="7.0" layoutY="13.0" prefHeight="21.0" prefWidth="155.0" text="Traction / Minimum : ">
+                        <font>
+                           <Font name="System Bold" size="15.0" />
+                        </font>
+                     </Label>
+                     <Label fx:id="labelTraction" layoutX="160.0" layoutY="13.0" text="Label">
+                        <font>
+                           <Font name="System Bold" size="15.0" />
+                        </font></Label>
+                  </children>
+               </Pane>
+               <Pane layoutX="55.0" layoutY="387.0" prefHeight="50.0" prefWidth="321.0" style="-fx-background-color: #f4f4f4; -fx-border-width: 2px; -fx-border-color: gray;">
+                  <children>
+                     <Label layoutX="74.0" layoutY="12.0" prefHeight="20.0" prefWidth="175.0" text="            Produite ">
+                        <font>
+                           <Font name="System Bold" size="15.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+               <Pane layoutX="55.0" layoutY="436.0" prefHeight="50.0" prefWidth="321.0" style="-fx-background-color: #f4f4f4; -fx-border-width: 2px; -fx-border-color: gray;">
+                  <children>
+                     <Label layoutX="77.0" layoutY="14.0" prefHeight="20.0" prefWidth="177.0" text="         Série Produite ">
+                        <font>
+                           <Font name="System Bold" size="15.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+               <Pane layoutX="375.0" layoutY="387.0" prefHeight="50.0" prefWidth="549.0" style="-fx-background-color: #f4f4f4; -fx-border-color: gray; -fx-border-width: 2px;">
+                  <children>
+                     <Label fx:id="produit" layoutX="275.0" layoutY="3.0" styleClass="labelll2">
+                        <font>
+                           <Font name="System Bold" size="16.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+               <Pane layoutX="375.0" layoutY="435.0" prefHeight="50.0" prefWidth="550.0" style="-fx-background-color: #f4f4f4; -fx-border-color: gray; -fx-border-width: 2px;">
+                  <children>
+                     <Label fx:id="serieProduit" layoutX="240.0" layoutY="3.0" styleClass="labelll2">
+                        <font>
+                           <Font name="System Bold" size="16.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+               <Pane layoutX="55.0" layoutY="484.0" prefHeight="50.0" prefWidth="321.0" style="-fx-background-color: #f4f4f4; -fx-border-width: 2px; -fx-border-color: gray;">
+                  <children>
+                     <Label layoutX="77.0" layoutY="14.0" prefHeight="20.0" prefWidth="177.0" text="      Quantité du cycle ">
+                        <font>
+                           <Font name="System Bold" size="15.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+               <Pane layoutX="376.0" layoutY="484.0" prefHeight="52.0" prefWidth="548.0" style="-fx-background-color: #f4f4f4; -fx-border-color: gray; -fx-border-width: 2px;">
+                  <children>
+                     <Label fx:id="quantiteCycle" layoutX="275.0" layoutY="3.0" styleClass="labelll2">
+                        <font>
+                           <Font name="System Bold" size="16.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+               <Pane layoutX="54.0" layoutY="533.0" prefHeight="50.0" prefWidth="322.0" style="-fx-background-color: #f4f4f4; -fx-border-width: 2px; -fx-border-color: gray;">
+                  <children>
+                     <Label layoutX="77.0" layoutY="14.0" prefHeight="20.0" prefWidth="177.0" text="    Machine de traction ">
+                        <font>
+                           <Font name="System Bold" size="15.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+               <Pane layoutX="375.0" layoutY="532.0" prefHeight="51.0" prefWidth="549.0" style="-fx-background-color: #f4f4f4; -fx-border-color: gray; -fx-border-width: 2px;">
+                  <children>
+                     <Label fx:id="machineTraction" layoutX="275.0" layoutY="3.0" styleClass="labelll2">
+                        <font>
+                           <Font name="System Bold" size="16.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+               <Pane layoutX="374.0" layoutY="195.0" prefHeight="50.0" prefWidth="399.0" style="-fx-background-color: #f4f4f4; -fx-border-color: gray; -fx-border-width: 2px;" styleClass="labelll2">
+                  <children>
+                     <Label fx:id="largeurSertissage" layoutX="200.0" layoutY="3.0" styleClass="labelll2">
+                        <font>
+                           <Font name="System Bold" size="16.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+               <Pane layoutX="374.0" layoutY="244.0" prefHeight="51.0" prefWidth="399.0" style="-fx-background-color: #f4f4f4; -fx-border-color: gray; -fx-border-width: 2px;">
+                  <children>
+                     <Label fx:id="hauteurIsolant" layoutX="200.0" layoutY="3.0" styleClass="labelll2">
+                        <font>
+                           <Font name="System Bold" size="16.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+               <Pane layoutX="374.0" layoutY="294.0" prefHeight="46.0" prefWidth="400.0" style="-fx-background-color: #f4f4f4; -fx-border-color: gray; -fx-border-width: 2px;">
+                  <children>
+                     <Label fx:id="largeurIsolant" layoutX="200.0" layoutY="3.0" styleClass="labelll2">
+                        <font>
+                           <Font name="System Bold" size="16.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+               <Pane layoutX="375.0" layoutY="338.0" prefHeight="50.0" prefWidth="398.0" style="-fx-background-color: #f4f4f4; -fx-border-color: gray; -fx-border-width: 2px;">
+                  <children>
+                     <Label fx:id="traction" layoutX="210.0" layoutY="3.0" styleClass="labelll2">
+                        <font>
+                           <Font name="System Bold" size="16.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+                <Pane fx:id="paneChartSertissageNormal" layoutX="930.0" layoutY="145.0" prefHeight="250.0" prefWidth="400.0" />
+               <Label fx:id="titreChart" layoutX="1040.0" layoutY="110.0" text="Hauteur de sertissage sur cuivre ">
+                  <font>
+                     <Font name="System Bold" size="16.0" />
+                  </font>
+               </Label>           
+               </children>
+         </AnchorPane>
+      </center>
+ 
+ 
+
+</BorderPane>
+</StackPane>

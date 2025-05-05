@@ -1,0 +1,140 @@
+.close{
+    -fx-background-color:transparent;
+    -fx-cursor:hand;
+}
+.close:hover{
+    -fx-background-color:#ff4d5f;
+}
+
+.minimize{
+    -fx-background-color:transparent;
+    -fx-cursor:hand;
+}
+.minimize:hover{
+    -fx-background-color:#0cd543;
+}
+.suivant-btn{
+    -fx-background-color:#0aaf37;
+    -fx-background-radius:10px;
+    -fx-cursor:hand;
+    -fx-font-size:18px;
+    -fx-text-fill:#fff;
+    -fx-font-family:"Arial";
+    -fx-font-weight: bold;
+}
+
+.logout{
+    -fx-background-color:transparent;
+    -fx-cursor:hand;
+}
+.nomPrenom{
+    -fx-background-color:transparent;
+    -fx-cursor:hand;
+}
+.rectngleDateHeure {
+    -fx-border-color: black;     
+    -fx-border-width: 2px;       
+    -fx-border-radius: 10px;    
+    -fx-background-radius: 10px; 
+}
+.descriptionCodes {
+    -fx-background-color: #D9D9D9;
+    -fx-background-radius: 10px;
+    -fx-padding: 10px;
+}
+.combo {
+    -fx-background-color: #D9D9D9;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+    -fx-font-size: 16px;
+    -fx-border-color: #A0A0A0;
+    -fx-alignment: center;  /* Cela centre l'élément dans la zone de la ComboBox */
+}
+
+.combo .list-cell {
+    -fx-font-weight: bold;
+    -fx-alignment: center;  /* Centrer les éléments de la liste déroulante */
+    -fx-padding: 5px;       /* Ajouter un peu de padding pour une meilleure lisibilité */
+}
+
+.combo .text {
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;  /* Centrer le texte dans la zone sélectionnée */
+    -fx-alignment: center;       /* Assurer que le texte dans la ComboBox soit centré */
+}
+.liste-projets-combo {
+    -fx-background-color: #D9D9D9;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+    -fx-font-size: 16px;
+    -fx-border-color: #A0A0A0;
+    -fx-alignment: center;
+}
+
+.liste-projets-combo .list-cell {
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-padding: 5px;
+}
+
+.liste-projets-combo .text {
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.liste-sectionFil-combo {
+    -fx-background-color: #D9D9D9;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+    -fx-font-size: 16px;
+    -fx-border-color: #A0A0A0;
+}
+
+.liste-sectionFil-combo .list-cell {
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-padding: 5px;
+}
+
+.liste-sectionFil-combo .text {
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+.liste-sectionFil-combo .list-view {
+    -fx-pref-width: 150px;
+    -fx-pref-height: 40px; /* Ajustez la hauteur en fonction du nombre d'éléments */
+}
+.liste-codeControle-combo {
+    -fx-background-color: #D9D9D9;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+    -fx-font-size: 16px;
+    -fx-border-color: #A0A0A0;
+}
+
+.liste-codeControle-combo .list-cell {
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-padding: 5px;
+}
+
+.liste-codeControle-combo .text {
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+.liste-codeControle-combo .list-view {
+    -fx-pref-width: 150px;
+    -fx-pref-height: 150px; /* Ajustez la hauteur en fonction du nombre d'éléments */
+}
+
+.radiusBtn{
+	 -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
