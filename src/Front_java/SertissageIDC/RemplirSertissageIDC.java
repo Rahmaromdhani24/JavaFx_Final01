@@ -23,6 +23,7 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -249,7 +250,31 @@ public class RemplirSertissageIDC {
 		setActiveOnFocus(numMachine);
 		setActiveOnFocus(quantiteCycle);
 
+		/******************* navigation en clic entrer ******************/
+		  setEnterKeyFocus(hauteurSertissageEch1C1, forceTractionEch1C1);
+		    setEnterKeyFocus(forceTractionEch1C1, hauteurSertissageEch1C2);
+		    setEnterKeyFocus(hauteurSertissageEch1C2, forceTractionEch1C2);
+		    setEnterKeyFocus(forceTractionEch1C2, hauteurSertissageEch2C1);
+		    setEnterKeyFocus(hauteurSertissageEch2C1, forceTractionEch2C1);
+		    setEnterKeyFocus(forceTractionEch2C1, hauteurSertissageEch2C2);
+		    setEnterKeyFocus(hauteurSertissageEch2C2, forceTractionEch2C2);
+		    setEnterKeyFocus(forceTractionEch2C2, hauteurSertissageEch3C1);
+		    setEnterKeyFocus(hauteurSertissageEch3C1, forceTractionEch3C1);
+		    setEnterKeyFocus( forceTractionEch3C1 ,hauteurSertissageEch3C2 );
+		    setEnterKeyFocus( hauteurSertissageEch3C2 , forceTractionEch3C2 );
+		    setEnterKeyFocus(  forceTractionEch3C2  , produit);
+		    setEnterKeyFocus(  produit , serieProduit);
+		    setEnterKeyFocus(  serieProduit , numMachine);
+		    setEnterKeyFocus(  numMachine , quantiteCycle);
 	}
+	private void setEnterKeyFocus(TextField currentField, TextField nextField) {
+	    currentField.setOnKeyPressed(event -> {
+	        if (event.getCode() == KeyCode.ENTER) {
+	            nextField.requestFocus();
+	        }
+	    });
+	}
+
 
 	
 	@FXML
@@ -407,7 +432,7 @@ public class RemplirSertissageIDC {
 	     	    
 	       	        SertissageIDCInformations.produit = produit.getText(); 
 	     	        SertissageIDCInformations.serieProduit = serieProduit.getText(); 
-	     	        SertissageIDCInformations.numeroMachine =  Integer.parseInt(numMachine.getText()); 
+	     	        SertissageIDCInformations.numeroMachine =  numMachine.getText(); 
 	     	        SertissageIDCInformations.quantiteCycle= Integer.parseInt(quantiteCycle.getText()) ; 
             	    
                 // Affichage direct de la fenêtre SoudureResultat
@@ -471,13 +496,32 @@ public class RemplirSertissageIDC {
        	        SertissageIDCInformations.hauteurSertissageC2Ech3 = hauteurSertissageEch3C2Value ;
        	   
        	        SertissageIDCInformations.forceTractionEch1C2 = Integer.parseInt( forceTractionEch1C2.getText()); 
-     	        SertissageIDCInformations.forceTractionEch2C2 = Integer.parseInt(forceTractionEch1C2.getText()); 
+     	        SertissageIDCInformations.forceTractionEch2C2 = Integer.parseInt(forceTractionEch2C2.getText()); 
      	        SertissageIDCInformations.forceTractionEch3C2 = Integer.parseInt(forceTractionEch3C2.getText());
      	    
        	        SertissageIDCInformations.produit = produit.getText(); 
      	        SertissageIDCInformations.serieProduit = serieProduit.getText(); 
-     	        SertissageIDCInformations.numeroMachine =  Integer.parseInt(numMachine.getText()); 
+     	        SertissageIDCInformations.numeroMachine =  numMachine.getText(); 
        	    
+     	       hauteurSertissageEch1C1.setEditable(false);
+     	       hauteurSertissageEch2C1.setEditable(false);
+     	       hauteurSertissageEch3C1.setEditable(false);
+     	       hauteurSertissageEch1C2.setEditable(false);
+     	       hauteurSertissageEch2C2.setEditable(false);
+     	       hauteurSertissageEch3C2.setEditable(false);
+     	        forceTractionEch1C1.setEditable(false);
+	           	forceTractionEch2C1.setEditable(false);
+	           	forceTractionEch3C1.setEditable(false);
+	            forceTractionEch1C2.setEditable(false);
+	           	forceTractionEch2C2.setEditable(false);
+	           	forceTractionEch3C2.setEditable(false);
+     	        
+     	       setEnterKeyFocus( hauteurSertissageEchFinC1 ,forceTractionEchFinC1 );
+     	       setEnterKeyFocus( forceTractionEchFinC1  ,hauteurSertissageEchFinC2);
+     	       setEnterKeyFocus( hauteurSertissageEchFinC2 ,  forceTractionEchFinC2);
+     	       setEnterKeyFocus(  forceTractionEchFinC2 , quantiteCycle);
+     	        
+     	        
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/Front_java/SertissageIDC/loading/LoadingSertissageIDC.fxml"));
                 Scene loadingScene = new Scene(loader.load());
                 String cssPath = "/Front_java/SertissageIDC/loading/LoadingSertissageIDC.css";
@@ -537,7 +581,7 @@ public class RemplirSertissageIDC {
 
                     	    SertissageIDCInformations.produit = produit.getText(); 
                     	    SertissageIDCInformations.serieProduit = serieProduit.getText(); 
-                    	    SertissageIDCInformations.numeroMachine =  Integer.parseInt(numMachine.getText()); 
+                    	    SertissageIDCInformations.numeroMachine =  numMachine.getText(); 
                     	    SertissageIDCInformations.quantiteCycle= Integer.parseInt(quantiteCycle.getText()) ; 
 
 

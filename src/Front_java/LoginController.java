@@ -7,6 +7,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -35,6 +36,8 @@ public class LoginController {
     private static final String API_URL = "http://localhost:8281/"; 
     
     private Locale currentLocale = new Locale("fr"); // Langue par défaut : Français
+    private double xOffset = 0;
+    private double yOffset = 0;
 
     @FXML
     private Label loginLabel;
@@ -80,7 +83,23 @@ public class LoginController {
     private void initialize() {
         // Charger la langue par défaut (Français)
         loadLanguage(currentLocale);
+        // Lorsque l'utilisateur appuie sur Entrée dans le champ matricule
+        matricule.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                loginBtn.fire(); // simule un clic sur le bouton login
+            }
+        });
+        // Permet le déplacement de la fenêtre avec la souris
+        rootPane.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
 
+        rootPane.setOnMouseDragged(event -> {
+            Stage stage = (Stage) rootPane.getScene().getWindow();
+            stage.setX(event.getScreenX() - xOffset);
+            stage.setY(event.getScreenY() - yOffset);
+        });
     }
     @FXML
     private void showLanguageMenu(MouseEvent event) {
@@ -176,7 +195,7 @@ public class LoginController {
         String jsonBody = "{\"matricule\":" + matricule + "}";
 
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(API_URL + "auth/login"))
+                .uri(URI.create(API_URL + "auth/loginOperateur"))
                 .header("Content-Type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
                 .build();

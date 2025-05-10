@@ -451,7 +451,7 @@ public class SoudureResultat{
 	   valeurQuantite.setText(SoudureInformations.quantiteAtteint+"");
 	   valeurNumKanban.setText(SoudureInformations.numeroKanban+"");
 	   valeurGrandeurLot.setText(SoudureInformations.grandeurLot +"");
-       valeurNumNoeud.setText(SoudureInformations.numNoeud);
+       valeurNumNoeud.setText("N"+SoudureInformations.numNoeud);
 	   valeurMoyenne.setText(SoudureInformations.moyenne+"");
 
 	   valeurDistanceBC.setText(SoudureInformations.distanceBC);
@@ -469,7 +469,12 @@ public class SoudureResultat{
    
       /*********************   Alerts  Erreur et warning    ***********/
    
-private void showErrorDialog(String title, String message) {
+   private void showErrorDialog(String title, String message) {
+		Locale locale = getLocaleFromString(AppInformations.langueSelectionnee);
+		ResourceBundle bundle = ResourceBundle.getBundle("lang", locale);
+		String errorTitle = bundle.getString("error.title");
+		String errorMessage = bundle.getString("error.message.ajout_pdek") ;
+
 		Image errorIcon = new Image(getClass().getResource("/icone_erreur.png").toExternalForm());
 		ImageView errorImageView = new ImageView(errorIcon);
 		errorImageView.setFitWidth(100);
@@ -478,11 +483,11 @@ private void showErrorDialog(String title, String message) {
 		VBox iconBox = new VBox(errorImageView);
 		iconBox.setAlignment(Pos.CENTER);
 
-		Label messageLabel = new Label(message);
+		Label messageLabel = new Label(errorMessage);
 		messageLabel.setWrapText(true);
-		messageLabel.setStyle("-fx-font-size: 19px; -fx-font-weight: bold; -fx-text-alignment: center;");
+		messageLabel.setStyle("-fx-font-size: 19px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-text-fill: black;");
 
-		Label titleLabel = new Label(title);
+		Label titleLabel = new Label(errorTitle);
 		titleLabel.setStyle("-fx-font-size: 19px; -fx-text-alignment: center;");
 		VBox titleBox = new VBox(titleLabel);
 		titleBox.setAlignment(Pos.CENTER);
@@ -495,7 +500,7 @@ private void showErrorDialog(String title, String message) {
 		content.setStyle("-fx-background-color: white; -fx-background-radius: 10;");
 
 		JFXButton closeButton = new JFXButton("error.button.close");
-		closeButton.setStyle("-fx-font-size: 19px; -fx-padding: 10px 20px; -fx-font-weight: bold;");
+		closeButton.setStyle("-fx-font-size: 19px; -fx-padding: 10px 20px;-fx-font-weight: bold;");
 		content.setActions(closeButton);
 
 		// Utilisation de stackPane ici
@@ -511,9 +516,11 @@ private void showErrorDialog(String title, String message) {
 			}
 		});
 	}
- 
 	
 	private void showWarningDialog(String title, String message) {
+		Locale locale = getLocaleFromString(AppInformations.langueSelectionnee);
+		ResourceBundle bundle = ResourceBundle.getBundle("lang", locale);
+		String closeButtonTitle = bundle.getString("error.button.close");
 		Image warningIcon = new Image(getClass().getResource("/warning.jpg").toExternalForm());
 		ImageView warningImageView = new ImageView(warningIcon);
 		warningImageView.setFitWidth(150);
@@ -538,7 +545,7 @@ private void showErrorDialog(String title, String message) {
 		content.setBody(contentBox);
 		content.setStyle("-fx-background-color: white; -fx-background-radius: 10;");
 
-		JFXButton closeButton = new JFXButton("error.button.close");
+		JFXButton closeButton = new JFXButton(closeButtonTitle);
 		closeButton.setStyle("-fx-font-size: 19px; -fx-padding: 10px 20px; -fx-font-weight: bold;");
 		content.setActions(closeButton);
 

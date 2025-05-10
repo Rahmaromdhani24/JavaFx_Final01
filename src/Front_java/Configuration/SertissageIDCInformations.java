@@ -33,7 +33,7 @@ public class SertissageIDCInformations {
 	public static String produit ; 
 	public static String serieProduit ; 
 	public static int quantiteCycle ; 
-	public static int numeroMachine ; 
+	public static String numeroMachine ; 
 
 	
 
@@ -62,7 +62,7 @@ public class SertissageIDCInformations {
 	   produit = null;
 	   serieProduit = null;
 	   quantiteCycle = 0;
-	   numeroMachine = 0 ; 
+	   numeroMachine = null ; 
        forceTractionEch1C1 = 0;
 	   forceTractionEch2C1 = 0;
 	   forceTractionEch3C1 = 0;

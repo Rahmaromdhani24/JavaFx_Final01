@@ -447,7 +447,7 @@ private void ajouterPdekAvecSertissageIDC() {
 				sertissageIDC.setProduit(SertissageIDCInformations.produit);
 				sertissageIDC.setSerieProduit(SertissageIDCInformations.serieProduit);
 				sertissageIDC.setQuantiteCycle(SertissageIDCInformations.quantiteCycle);
-				sertissageIDC.setNumeroMachine(SertissageIDCInformations.numeroMachine );
+				sertissageIDC.setNumeroMachine(SertissageIDCInformations.numeroMachine +"");
 				sertissageIDC.setForceTractionC1Ech1(SertissageIDCInformations.forceTractionEch1C1);
 				sertissageIDC.setForceTractionC1Ech2(SertissageIDCInformations.forceTractionEch2C1);
 				sertissageIDC.setForceTractionC1Ech3(SertissageIDCInformations.forceTractionEch3C1);

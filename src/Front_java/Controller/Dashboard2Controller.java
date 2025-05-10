@@ -34,6 +34,7 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -281,9 +282,23 @@ public class Dashboard2Controller {
 		setActiveOnFocus(grandeurField);
 		setActiveOnFocus(nbrNoeudField);
 		
-
+/******************* navigation en clic entrer ******************/
+		  setEnterKeyFocus(tractionField, kanbanField);
+		    setEnterKeyFocus(kanbanField, grandeurField);
+		    setEnterKeyFocus(grandeurField, nbrNoeudField);
+		    setEnterKeyFocus(nbrNoeudField, x1Pleage);
+		    setEnterKeyFocus(x1Pleage, x2Pleage);
+		    setEnterKeyFocus(x2Pleage, x3Pleage);
+		    setEnterKeyFocus(x3Pleage, x4Pleage);
+		    setEnterKeyFocus(x4Pleage, x5Pleage);
 	}
-
+	private void setEnterKeyFocus(TextField currentField, TextField nextField) {
+	    currentField.setOnKeyPressed(event -> {
+	        if (event.getCode() == KeyCode.ENTER) {
+	            nextField.requestFocus();
+	        }
+	    });
+	}
 
 
 	@FXML
@@ -402,7 +417,29 @@ public class Dashboard2Controller {
                 	SoudureInformations.traction =tractionField.getText() ; 
                 	SoudureInformations.numeroKanban = Integer.parseInt(kanbanField.getText()) ; 
                 	SoudureInformations.grandeurLot = Integer.parseInt(grandeurField.getText()) ; 
-                	SoudureInformations.numNoeud = nbrNoeudField.getText() ; 
+                	SoudureInformations.numNoeud = nbrNoeudField.getText() ;
+                	// Rendre les champs non éditables (au lieu de les désactiver)
+                	x1Pleage.setEditable(false);
+                	x2Pleage.setEditable(false);
+                	x3Pleage.setEditable(false);
+                	x4Pleage.setEditable(false);
+                	x5Pleage.setEditable(false);
+                	tractionField.setEditable(false);
+                	kanbanField.setEditable(false);
+                	grandeurField.setEditable(false);
+                	nbrNoeudField.setEditable(false);
+
+           
+                	
+                	pliageCombo.setEditable(false);
+                	pliageCombo.setMouseTransparent(true);
+                	pliageCombo.setFocusTraversable(false);
+                	
+                	distanceCombo.setEditable(false);
+                	distanceCombo.setMouseTransparent(true);
+                	distanceCombo.setFocusTraversable(false);
+                	
+
 	                try {
 	                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Front_java/Loading/Loading.fxml"));
 	                    Scene loadingScene = new Scene(loader.load());
@@ -1134,10 +1171,10 @@ public class Dashboard2Controller {
 
  	                // Vérification de la réponse HTTP
  	                if (response.statusCode() == 202) {
- 	                    System.out.println("✅ Email d'alerte envoyée avec succès.");
+ 	                    System.out.println("✅ Email validation envoyée avec succès.");
  	                } else if (response.statusCode() == 403) {
  	                    // Analyser et afficher la réponse détaillée en cas de 403
- 	                    System.out.println("❌ Échec de l'envoi de l'alerte (accès refusé).");
+ 	                    System.out.println("❌ Échec de l'envoi de l'alerte de validation .");
  	                    System.out.println("Détails de l'erreur 403: " + response.body()); // Affiche le contenu du corps de la réponse
  	                } else {
  	                    System.out.println("⚠️ Erreur lors de l'envoi : code = " + response.statusCode());

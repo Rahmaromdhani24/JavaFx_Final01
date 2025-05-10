@@ -30,6 +30,7 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -271,6 +272,28 @@ public class RemplirTorsadage {
 		setActiveOnFocus(quantiteTotal);
 		setActiveOnFocus(quantiteAtteint);
 	
+		/******************* navigation en clic entrer ******************/
+		  setEnterKeyFocus(numCommande, longueurFinalDebutCde);
+		    setEnterKeyFocus(longueurFinalDebutCde, lognueurBoutDebutC1);
+		    setEnterKeyFocus(lognueurBoutDebutC1, lognueurBoutDebutC2);
+		    setEnterKeyFocus(lognueurBoutDebutC2, lognueurBoutFinC1);
+		    setEnterKeyFocus(lognueurBoutFinC1, lognueurBoutFinC2);
+		    setEnterKeyFocus(lognueurBoutFinC2, decalageDebutC1);
+		    setEnterKeyFocus(decalageDebutC1, decalageDebutC2);
+		    setEnterKeyFocus(decalageDebutC2, ech1);
+		    setEnterKeyFocus(ech1, ech2);
+		    setEnterKeyFocus(ech2, ech3);
+		    setEnterKeyFocus(ech3, ech4);
+		    setEnterKeyFocus(ech4, ech5);
+		    setEnterKeyFocus(ech5 , quantiteTotal);
+		    setEnterKeyFocus(quantiteTotal, quantiteAtteint);
+	}
+	private void setEnterKeyFocus(TextField currentField, TextField nextField) {
+	    currentField.setOnKeyPressed(event -> {
+	        if (event.getCode() == KeyCode.ENTER) {
+	            nextField.requestFocus();
+	        }
+	    });
 	}
 
 	private void loadNumFils() {
@@ -447,6 +470,28 @@ public class RemplirTorsadage {
         	TorsadageInformations.ech5 = ech5.getText() ; 
         	TorsadageInformations.quantiteTotal  = quantiteTotal.getText() ; 
         	TorsadageInformations.numCourant = Integer.parseInt( nbrCycle.getText() ) ; 
+        	
+        	// Désactiver l’édition des champs sans cacher leur contenu
+        	numCommande.setEditable(false);
+        	longueurFinalDebutCde.setEditable(false);
+        	lognueurBoutDebutC1.setEditable(false);
+        	lognueurBoutDebutC2.setEditable(false);
+        	lognueurBoutFinC1.setEditable(false);
+        	lognueurBoutFinC2.setEditable(false);
+        	decalageDebutC1.setEditable(false);
+        	decalageDebutC2.setEditable(false);
+        	ech1.setEditable(false);
+        	ech2.setEditable(false);
+        	ech3.setEditable(false);
+        	ech4.setEditable(false);
+        	ech5.setEditable(false);
+        	quantiteTotal.setEditable(false);
+        	// Désactiver les ComboBox
+        	numFils.setDisable(true);
+        	  setEnterKeyFocus(longueurFinalFinCde, longueurPasFinCde);
+        	  setEnterKeyFocus(longueurPasFinCde, quantiteAtteint);
+        	  setEnterKeyFocus(decalageFinC1, decalageFinC2);
+        	  setEnterKeyFocus(decalageFinC2, longueurFinalFinCde);
         	
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/Front_java/Torsadage/loading/LoadingTorsadage.fxml"));

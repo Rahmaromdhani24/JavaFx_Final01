@@ -25,6 +25,7 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -254,6 +255,22 @@ public class RemplirSertissageNormal {
 
 	
 	
+		/******************* navigation en clic entrer ******************/
+		    setEnterKeyFocus(hauteurSertissageEch1, hauteurSertissageEch2);
+		    setEnterKeyFocus(hauteurSertissageEch2, hauteurSertissageEch3);
+		    setEnterKeyFocus(hauteurSertissageEch3, largeurSertissage);
+		    setEnterKeyFocus(largeurSertissage, hauteurIsolant);
+		    setEnterKeyFocus(hauteurIsolant, largeurIsolant);
+		    setEnterKeyFocus(largeurIsolant, traction);
+		    setEnterKeyFocus(traction, serieProduit);
+		 
+	}
+	private void setEnterKeyFocus(TextField currentField, TextField nextField) {
+	    currentField.setOnKeyPressed(event -> {
+	        if (event.getCode() == KeyCode.ENTER) {
+	            nextField.requestFocus();
+	        }
+	    });
 	}
 /********************** load Liste machine traction ************************/
 	private void loadListeMachinesTractions() {
@@ -553,6 +570,30 @@ public class RemplirSertissageNormal {
                   	SertissageNormaleInformations.produit = listeProduits.getValue();
                   	SertissageNormaleInformations.machineTraction = listeMachineTraction.getValue();
                   	SertissageNormaleInformations.serieProduit = serieProduit.getText() ; 
+                  	
+                  	hauteurSertissageEch1.setEditable(false);
+                  	hauteurSertissageEch2.setEditable(false);
+                  	hauteurSertissageEch3.setEditable(false);
+                	hauteurIsolant.setEditable(false);
+                	largeurIsolant.setEditable(false);
+                	traction.setEditable(false);
+                	serieProduit.setEditable(false);
+                
+
+                	// Pour les ComboBox (pas de setEditable pertinent ici), désactiver sans masquer
+                	listeProduits.setEditable(false);
+                	listeProduits.setMouseTransparent(true);
+                	listeProduits.setFocusTraversable(false);
+                	
+                	listeMachineTraction.setEditable(false);
+                	listeMachineTraction.setMouseTransparent(true);
+                	listeMachineTraction.setFocusTraversable(false);
+                	
+                	 setEnterKeyFocus(hauteurSertissageEchFin, largeurSertissageEchFin);
+                	 setEnterKeyFocus(largeurSertissageEchFin , hauteurIsolantEchFin);
+                	 setEnterKeyFocus(hauteurIsolantEchFin , largeurIsolantEchFin);
+                	 setEnterKeyFocus(largeurIsolantEchFin , tractionEchFin);
+                	 setEnterKeyFocus(tractionEchFin , quantiteCycle);
         			  try {
         	                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Front_java/SertissageNormal/loading/LoadingSertissageNormal.fxml"));
         	                Scene loadingScene = new Scene(loader.load());

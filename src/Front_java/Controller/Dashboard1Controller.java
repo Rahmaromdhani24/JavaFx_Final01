@@ -569,12 +569,12 @@ public class Dashboard1Controller{
             labelChoisirProjet.setText(bundle.getString("label.chooseProject"));
             labelSectionFil.setText(bundle.getString("label.selectWireSection"));
             btnSuivant.setText(bundle.getString("boutonSuivant"));
-            description1.setText(bundle.getString("code1Soudure"));
-            description2.setText(bundle.getString("code2Soudure"));
-            description3.setText(bundle.getString("code3Soudure"));
-            description4.setText(bundle.getString("code4Soudure"));
-            description5.setText(bundle.getString("code5Soudure"));
-            description6.setText(bundle.getString("code6Soudure"));
+            description1.setText(bundle.getString("desc.A"));
+            description2.setText(bundle.getString("desc.B"));
+            description3.setText(bundle.getString("desc.E"));
+            description4.setText(bundle.getString("desc.P"));
+            description5.setText(bundle.getString("desc.R"));
+            description6.setText(bundle.getString("desc.S"));
 
         } catch (MissingResourceException e) {
             System.out.println("❌ Erreur : Fichier de langue introuvable");
