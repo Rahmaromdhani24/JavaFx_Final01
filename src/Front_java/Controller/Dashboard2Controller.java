@@ -341,7 +341,7 @@ public class Dashboard2Controller {
 	            || kanbanField.getText().isEmpty() || grandeurField.getText().isEmpty() || nbrNoeudField.getText().isEmpty()
 	            || distanceCombo.getValue() == null || pliageCombo.getValue() == null) {
 
-	        showErrorDialog("Veuillez remplir tous les champs avant de continuer !", "Champs obligatoires");
+	        showErrorDialog("Veuillez remplir tous les champs avant de continuer !", "");
 	        return; // Arrêt si un champ est vide
 	    }
 
@@ -696,6 +696,7 @@ public class Dashboard2Controller {
 		ResourceBundle bundle = ResourceBundle.getBundle("lang", locale);
 		String errorTitle = bundle.getString("error.title");
 		String errorMessage = bundle.getString("error.message.ajout_pdek") ;
+		String errorFermer = bundle.getString("error.button.close");
 
 		Image errorIcon = new Image(getClass().getResource("/icone_erreur.png").toExternalForm());
 		ImageView errorImageView = new ImageView(errorIcon);
@@ -721,7 +722,7 @@ public class Dashboard2Controller {
 		content.setBody(contentBox);
 		content.setStyle("-fx-background-color: white; -fx-background-radius: 10;");
 
-		JFXButton closeButton = new JFXButton("error.button.close");
+		JFXButton closeButton = new JFXButton(errorFermer);
 		closeButton.setStyle("-fx-font-size: 19px; -fx-padding: 10px 20px;-fx-font-weight: bold;");
 		content.setActions(closeButton);
 

@@ -1,0 +1,43 @@
+/* Style du fond de la fenêtre */
+.root {
+    -fx-background-color: #f0f4f8;
+}
+
+/* Style du label */
+.label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+/* Style du TextField */
+.text-field {
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+    -fx-border-color: #999999;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+/* Style du bouton Scan */
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 6 12 6 12;
+    -fx-background-radius: 4px;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Style du bouton Vérifier */
+.button:default {
+    -fx-background-color: #27ae60;
+}
+
+.button:default:hover {
+    -fx-background-color: #1e8449;
+}

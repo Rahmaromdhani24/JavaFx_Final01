@@ -100,6 +100,7 @@ public class LoginController {
             stage.setX(event.getScreenX() - xOffset);
             stage.setY(event.getScreenY() - yOffset);
         });
+       
     }
     @FXML
     private void showLanguageMenu(MouseEvent event) {
@@ -175,11 +176,11 @@ public class LoginController {
     private void handleLogin(ActionEvent event) {
         String matriculeValue = matricule.getText();
 
-        if (matriculeValue.isEmpty()) {
-            System.out.println("Matricule is required!");
+
+        if (matriculeValue == null || matriculeValue.trim().isEmpty()) {
+            showErrorDialog("Erreur de saisie", "Veuillez saisir votre matricule.");
             return;
         }
-
         // Convertir matricule en entier et appeler l'API pour l'authentification
         try {
             int matriculeInt = Integer.parseInt(matriculeValue);

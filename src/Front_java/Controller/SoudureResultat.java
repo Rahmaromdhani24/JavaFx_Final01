@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets;
 
 import Front_java.ChartEttenduSoudure;
 import Front_java.ChartMoyenneSoudure;
+import Front_java.ConfirmationQualiteController;
 import Front_java.Configuration.AppInformations;
 import Front_java.Configuration.EmailRequest;
 import Front_java.Configuration.SoudureInformations;
@@ -68,7 +69,7 @@ public class SoudureResultat{
     private LineChart<Number, Number> chartMoyenne;
   
 	@FXML
-	private Button btnSuivant;
+	private  Button btnSuivant;
 
 	@FXML
 	private Button btnLogout ;
@@ -474,7 +475,7 @@ public class SoudureResultat{
 		ResourceBundle bundle = ResourceBundle.getBundle("lang", locale);
 		String errorTitle = bundle.getString("error.title");
 		String errorMessage = bundle.getString("error.message.ajout_pdek") ;
-
+		String btnFemer = bundle.getString("error.button.close") ;
 		Image errorIcon = new Image(getClass().getResource("/icone_erreur.png").toExternalForm());
 		ImageView errorImageView = new ImageView(errorIcon);
 		errorImageView.setFitWidth(100);
@@ -499,13 +500,19 @@ public class SoudureResultat{
 		content.setBody(contentBox);
 		content.setStyle("-fx-background-color: white; -fx-background-radius: 10;");
 
-		JFXButton closeButton = new JFXButton("error.button.close");
+		JFXButton closeButton = new JFXButton(btnFemer);
 		closeButton.setStyle("-fx-font-size: 19px; -fx-padding: 10px 20px;-fx-font-weight: bold;");
 		content.setActions(closeButton);
 
 		// Utilisation de stackPane ici
 		JFXDialog dialog = new JFXDialog(stackPane, content, JFXDialog.DialogTransition.CENTER);
 		closeButton.setOnAction(e -> dialog.close());
+
+		// 👉 Lorsqu'on clique sur le bouton "Fermer"
+		closeButton.setOnAction(e -> {
+			dialog.close(); // Fermer le JFXDialog
+			ouvrirFenetreConfirmationQualite(); // 👈 Ouvrir la fenêtre de confirmation
+		});
 
 		dialog.show();
 
@@ -517,10 +524,11 @@ public class SoudureResultat{
 		});
 	}
 	
-	private void showWarningDialog(String title, String message) {
+   private void showWarningDialog(String title, String message) {
 		Locale locale = getLocaleFromString(AppInformations.langueSelectionnee);
 		ResourceBundle bundle = ResourceBundle.getBundle("lang", locale);
 		String closeButtonTitle = bundle.getString("error.button.close");
+
 		Image warningIcon = new Image(getClass().getResource("/warning.jpg").toExternalForm());
 		ImageView warningImageView = new ImageView(warningIcon);
 		warningImageView.setFitWidth(150);
@@ -550,7 +558,12 @@ public class SoudureResultat{
 		content.setActions(closeButton);
 
 		JFXDialog dialog = new JFXDialog(stackPane, content, JFXDialog.DialogTransition.CENTER);
-		closeButton.setOnAction(e -> dialog.close());
+
+		// 👉 Lorsqu'on clique sur le bouton "Fermer"
+		closeButton.setOnAction(e -> {
+			dialog.close(); // Fermer le JFXDialog
+			ouvrirFenetreConfirmationQualite(); // 👈 Ouvrir la fenêtre de confirmation
+		});
 
 		dialog.show();
 
@@ -561,6 +574,7 @@ public class SoudureResultat{
 			}
 		});
 	}
+
 
 	/**** extraire N depuis valeur Pelage *******/
 	public int extractNumber(String input) {
@@ -597,6 +611,7 @@ public class SoudureResultat{
 	    	System.out.println("minPelage : " + minPelage);
 	    	System.out.println("parsedValue : " + parsedValueMoyenne);
 
+	    	
 	    	if ((moyenneEch < parsedValueMoyenne) && (minPelage < moyenneEch)) { // Zone jaune
 	    	    System.out.println("Zone jaune détectée");
 	    	    Platform.runLater(() -> {
@@ -1056,6 +1071,49 @@ public class SoudureResultat{
         }
     }
 
-    
+    private void ouvrirFenetreConfirmationQualite() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Front_java/ConfirmationQM.fxml"));
+            Parent root = loader.load();
 
+            // Obtenir le contrôleur de la fenêtre QM
+            ConfirmationQualiteController controller = loader.getController();
+
+            // 👉 Injecter la référence du contrôleur courant
+            controller.setSoudureResultController(this);
+
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setTitle("Confirmation de l'agent de qualité");
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+
+            btnSuivant.setDisable(true);
+
+            // Si tu veux le réactiver *au cas où* la fenêtre se ferme manuellement sans vérification
+            stage.setOnHidden(event -> {
+                // ne rien faire ici, on attend la confirmation depuis QM
+            });
+
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean activerSuivantSiAgentValide(int matricule, String plant) {
+        boolean estAgentQualite = ConfirmationQualiteController.verifierAgentQualite(matricule, plant);
+        if (estAgentQualite) {
+            btnSuivant.setDisable(false);
+            return true;
+        } else {
+            System.out.println("Utilisateur non autorisé");
+            return false;
+        }
+    }
+
+   
+  
 }	

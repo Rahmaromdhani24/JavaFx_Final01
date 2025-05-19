@@ -487,7 +487,10 @@ public class RemplirTorsadage {
         	ech5.setEditable(false);
         	quantiteTotal.setEditable(false);
         	// Désactiver les ComboBox
-        	numFils.setDisable(true);
+        	numFils.setEditable(false);
+        	numFils.setMouseTransparent(true);
+        	numFils.setFocusTraversable(false);
+        	
         	  setEnterKeyFocus(longueurFinalFinCde, longueurPasFinCde);
         	  setEnterKeyFocus(longueurPasFinCde, quantiteAtteint);
         	  setEnterKeyFocus(decalageFinC1, decalageFinC2);

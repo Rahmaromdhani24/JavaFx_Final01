@@ -180,13 +180,13 @@
                      <Label fx:id="label5" prefHeight="17.0" prefWidth="421.0" styleClass="labelll" text="  Longueur des bout de fil  non torsadé  a la fin  de Cde C1" GridPane.rowIndex="4" />
                      <Label  fx:id="label12"  prefWidth="370.0" styleClass="labelll" text="     Longueur final  a la fin de commande" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                      <Label  fx:id="label13" prefWidth="370.0" styleClass="labelll" text="      Longueur  de pas a la fin  de la Cde " GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                     <Label fx:id="labelEch1" styleClass="labelll" text="                           Echantillon X1" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                     <Label fx:id="labelEch2" styleClass="labelll" text="                           Echantillon X2" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                     <Label fx:id="labelEch1" styleClass="labelll" text="                           Echantillon X1" GridPane.columnIndex="2" GridPane.rowIndex="3" prefWidth="350.0" />
+                     <Label fx:id="labelEch2" styleClass="labelll" text="                           Echantillon X2" GridPane.columnIndex="2" GridPane.rowIndex="4" prefWidth="350.0"/>
                      <Label fx:id="label6" prefHeight="17.0" prefWidth="423.0" styleClass="labelll" text="  Longueur des bout de fil  non torsadé  a la fin  de Cde C2" GridPane.rowIndex="5" />
-                     <Label fx:id="label7" styleClass="labelll" text="    Décalage max  au début de   commande C1" GridPane.rowIndex="6" />
-                     <Label fx:id="label8" styleClass="labelll" text="    Décalage max  au début de   commandeC2" GridPane.rowIndex="7" />
-                     <Label fx:id="label9" styleClass="labelll" text="    Décalage max  a la fin de   commande C1" GridPane.rowIndex="8" />
-                     <Label fx:id="label10" styleClass="labelll" text="    Décalage max  a la fin de commande C2" GridPane.rowIndex="9" />
+                     <Label fx:id="label7" styleClass="labelll" text="Décalage max  au début de   commande C1" GridPane.rowIndex="6"  prefWidth="400.0" />
+                     <Label fx:id="label8" styleClass="labelll" text="Décalage max  au début de   commandeC2" GridPane.rowIndex="7" prefWidth="400.0" />
+                     <Label fx:id="label9" styleClass="labelll" text=" Décalage max  a la fin de   commande C1" GridPane.rowIndex="8" prefWidth="400.0" />
+                     <Label fx:id="label10" styleClass="labelll" text="Décalage max  a la fin de commande C2" GridPane.rowIndex="9" prefWidth="400.0" />
                      <TextField fx:id="longueurFinalDebutCde" styleClass="text-field-nombre-lot" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      <TextField fx:id="lognueurBoutDebutC1" styleClass="text-field-nombre-lot" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      <TextField fx:id="lognueurBoutDebutC2" styleClass="text-field-nombre-lot" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -205,11 +205,11 @@
                      <TextField fx:id="ech5" styleClass="text-field-nombre-lot" GridPane.columnIndex="3" GridPane.rowIndex="7" />
                      <TextField fx:id="ech4" styleClass="text-field-nombre-lot" GridPane.columnIndex="3" GridPane.rowIndex="6" />
                      <TextField fx:id="ech3" styleClass="text-field-nombre-lot" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-                     <Label fx:id="labelEch3" styleClass="labelll" text="                           Echantillon X3" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                     <Label fx:id="labelEch4" styleClass="labelll" text="                           Echantillon X4" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                     <Label fx:id="labelEch5" styleClass="labelll" text="                           Echantillon X5" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                     <Label fx:id="labelQuantiteTotal"  styleClass="labelll" text="                         Quantité Totale " GridPane.columnIndex="2" GridPane.rowIndex="8" />
-                     <Label fx:id="labelQuantiteAtteint" styleClass="labelll" text="                         Quantité Atteint" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                     <Label fx:id="labelEch3" styleClass="labelll" text="                           Echantillon X3" GridPane.columnIndex="2" GridPane.rowIndex="5" prefWidth="350.0"/>
+                     <Label fx:id="labelEch4" styleClass="labelll" text="                           Echantillon X4" GridPane.columnIndex="2" GridPane.rowIndex="6" prefWidth="350.0"/>
+                     <Label fx:id="labelEch5" styleClass="labelll" text="                           Echantillon X5" GridPane.columnIndex="2" GridPane.rowIndex="7" prefWidth="350.0"/>
+                     <Label fx:id="labelQuantiteTotal"  styleClass="labelll" text="                         Quantité Totale " GridPane.columnIndex="2" GridPane.rowIndex="8" prefWidth="350.0" />
+                     <Label fx:id="labelQuantiteAtteint" styleClass="labelll" text="                         Quantité Atteint" GridPane.columnIndex="2" GridPane.rowIndex="9" prefWidth="350.0"/>
                      <Label fx:id="labelNumCommande" prefHeight="17.0" prefWidth="392.0" styleClass="labelll" text="   Numéro de commande " />
                      <Label  fx:id="labelNumFils" prefHeight="17.0" prefWidth="270.0" styleClass="labelll" text="     Numéro de fils  " GridPane.columnIndex="2" />
                      <TextField fx:id="numCommande" styleClass="text-field-nombre-lot" GridPane.columnIndex="1" />

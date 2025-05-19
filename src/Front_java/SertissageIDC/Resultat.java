@@ -11,6 +11,7 @@ import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import Front_java.ChartSertissageIDCHauteur;
 import Front_java.ChartSertissageIDCTraction;
+import Front_java.ConfirmationQualiteController;
 import Front_java.Configuration.AppInformations;
 import Front_java.Configuration.EmailRequest;
 import Front_java.Configuration.EmailValidationPdek;
@@ -39,6 +40,8 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -786,90 +789,113 @@ public class Resultat {
 	 /**********************************   Alerts  Erreur et warning    **********************************************/
 		   
 		 private void showErrorDialog(String title, String message) {
-		 		Image errorIcon = new Image(getClass().getResource("/icone_erreur.png").toExternalForm());
-		 		ImageView errorImageView = new ImageView(errorIcon);
-		 		errorImageView.setFitWidth(100);
-		 		errorImageView.setFitHeight(100);
+				Locale locale = getLocaleFromString(AppInformations.langueSelectionnee);
+				ResourceBundle bundle = ResourceBundle.getBundle("lang", locale);
+				String errorTitle = bundle.getString("error.title");
+				String errorMessage = bundle.getString("error.message.ajout_pdek") ;
+				String btnFemer = bundle.getString("error.button.close") ;
+				Image errorIcon = new Image(getClass().getResource("/icone_erreur.png").toExternalForm());
+				ImageView errorImageView = new ImageView(errorIcon);
+				errorImageView.setFitWidth(100);
+				errorImageView.setFitHeight(100);
 
-		 		VBox iconBox = new VBox(errorImageView);
-		 		iconBox.setAlignment(Pos.CENTER);
+				VBox iconBox = new VBox(errorImageView);
+				iconBox.setAlignment(Pos.CENTER);
 
-		 		Label messageLabel = new Label(message);
-		 		messageLabel.setWrapText(true);
-		 		messageLabel.setStyle("-fx-font-size: 19px; -fx-font-weight: bold; -fx-text-alignment: center;");
+				Label messageLabel = new Label(errorMessage);
+				messageLabel.setWrapText(true);
+				messageLabel.setStyle("-fx-font-size: 19px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-text-fill: black;");
 
-		 		Label titleLabel = new Label(title);
-		 		titleLabel.setStyle("-fx-font-size: 19px; -fx-text-alignment: center;");
-		 		VBox titleBox = new VBox(titleLabel);
-		 		titleBox.setAlignment(Pos.CENTER);
+				Label titleLabel = new Label(errorTitle);
+				titleLabel.setStyle("-fx-font-size: 19px; -fx-text-alignment: center;");
+				VBox titleBox = new VBox(titleLabel);
+				titleBox.setAlignment(Pos.CENTER);
 
-		 		VBox contentBox = new VBox(10, iconBox, messageLabel, titleBox);
-		 		contentBox.setAlignment(Pos.CENTER);
+				VBox contentBox = new VBox(10, iconBox, messageLabel, titleBox);
+				contentBox.setAlignment(Pos.CENTER);
 
-		 		JFXDialogLayout content = new JFXDialogLayout();
-		 		content.setBody(contentBox);
-		 		content.setStyle("-fx-background-color: white; -fx-background-radius: 10;");
+				JFXDialogLayout content = new JFXDialogLayout();
+				content.setBody(contentBox);
+				content.setStyle("-fx-background-color: white; -fx-background-radius: 10;");
 
-		 		JFXButton closeButton = new JFXButton("Fermer");
-		 		closeButton.setStyle("-fx-font-size: 19px; -fx-padding: 10px 20px; -fx-font-weight: bold;");
-		 		content.setActions(closeButton);
+				JFXButton closeButton = new JFXButton(btnFemer);
+				closeButton.setStyle("-fx-font-size: 19px; -fx-padding: 10px 20px;-fx-font-weight: bold;");
+				content.setActions(closeButton);
 
-		 		// Utilisation de stackPane ici
-		 		JFXDialog dialog = new JFXDialog(stackPane, content, JFXDialog.DialogTransition.CENTER);
-		 		closeButton.setOnAction(e -> dialog.close());
+				// Utilisation de stackPane ici
+				JFXDialog dialog = new JFXDialog(stackPane, content, JFXDialog.DialogTransition.CENTER);
+				closeButton.setOnAction(e -> dialog.close());
 
-		 		dialog.show();
+				// 👉 Lorsqu'on clique sur le bouton "Fermer"
+				closeButton.setOnAction(e -> {
+					dialog.close(); // Fermer le JFXDialog
+					ouvrirFenetreConfirmationQualite(); // 👈 Ouvrir la fenêtre de confirmation
+				});
 
-		 		Platform.runLater(() -> {
-		 			StackPane overlayPane = (StackPane) dialog.lookup(".jfx-dialog-overlay-pane");
-		 			if (overlayPane != null) {
-		 				overlayPane.setStyle("-fx-background-color: transparent;");
-		 			}
-		 		});
-		 	}
+				dialog.show();
+
+				Platform.runLater(() -> {
+					StackPane overlayPane = (StackPane) dialog.lookup(".jfx-dialog-overlay-pane");
+					if (overlayPane != null) {
+						overlayPane.setStyle("-fx-background-color: transparent;");
+					}
+				});
+			}
+			
 		  
 		 	
-		 	private void showWarningDialog(String title, String message) {
-		 		Image warningIcon = new Image(getClass().getResource("/warning.jpg").toExternalForm());
-		 		ImageView warningImageView = new ImageView(warningIcon);
-		 		warningImageView.setFitWidth(150);
-		 		warningImageView.setFitHeight(150);
+		 private void showWarningDialog(String title, String message) {
+				Locale locale = getLocaleFromString(AppInformations.langueSelectionnee);
+				ResourceBundle bundle = ResourceBundle.getBundle("lang", locale);
+				String closeButtonTitle = bundle.getString("error.button.close");
 
-		 		VBox iconBox = new VBox(warningImageView);
-		 		iconBox.setAlignment(Pos.CENTER);
+				Image warningIcon = new Image(getClass().getResource("/warning.jpg").toExternalForm());
+				ImageView warningImageView = new ImageView(warningIcon);
+				warningImageView.setFitWidth(150);
+				warningImageView.setFitHeight(150);
 
-		 		Label messageLabel = new Label(message);
-		 		messageLabel.setWrapText(true);
-		 		messageLabel.setStyle("-fx-font-size: 19px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-text-fill: black;");
+				VBox iconBox = new VBox(warningImageView);
+				iconBox.setAlignment(Pos.CENTER);
 
-		 		Label titleLabel = new Label(title);
-		 		titleLabel.setStyle("-fx-font-size: 19px; -fx-text-alignment: center;");
-		 		VBox titleBox = new VBox(titleLabel);
-		 		titleBox.setAlignment(Pos.CENTER);
+				Label messageLabel = new Label(message);
+				messageLabel.setWrapText(true);
+				messageLabel.setStyle("-fx-font-size: 19px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-text-fill: black;");
 
-		 		VBox contentBox = new VBox(10, iconBox, messageLabel, titleBox);
-		 		contentBox.setAlignment(Pos.CENTER);
+				Label titleLabel = new Label(title);
+				titleLabel.setStyle("-fx-font-size: 19px; -fx-text-alignment: center;");
+				VBox titleBox = new VBox(titleLabel);
+				titleBox.setAlignment(Pos.CENTER);
 
-		 		JFXDialogLayout content = new JFXDialogLayout();
-		 		content.setBody(contentBox);
-		 		content.setStyle("-fx-background-color: white; -fx-background-radius: 10;");
+				VBox contentBox = new VBox(10, iconBox, messageLabel, titleBox);
+				contentBox.setAlignment(Pos.CENTER);
 
-		 		JFXButton closeButton = new JFXButton("Fermer");
-		 		closeButton.setStyle("-fx-font-size: 19px; -fx-padding: 10px 20px; -fx-font-weight: bold;");
-		 		content.setActions(closeButton);
+				JFXDialogLayout content = new JFXDialogLayout();
+				content.setBody(contentBox);
+				content.setStyle("-fx-background-color: white; -fx-background-radius: 10;");
 
-		 		JFXDialog dialog = new JFXDialog(stackPane, content, JFXDialog.DialogTransition.CENTER);
-		 		closeButton.setOnAction(e -> dialog.close());
+				JFXButton closeButton = new JFXButton(closeButtonTitle);
+				closeButton.setStyle("-fx-font-size: 19px; -fx-padding: 10px 20px; -fx-font-weight: bold;");
+				content.setActions(closeButton);
 
-		 		dialog.show();
+				JFXDialog dialog = new JFXDialog(stackPane, content, JFXDialog.DialogTransition.CENTER);
 
-		 		Platform.runLater(() -> {
-		 			StackPane overlayPane = (StackPane) dialog.lookup(".jfx-dialog-overlay-pane");
-		 			if (overlayPane != null) {
-		 				overlayPane.setStyle("-fx-background-color: transparent;");
-		 			}
-		 		});
-		 	}
+				// 👉 Lorsqu'on clique sur le bouton "Fermer"
+				closeButton.setOnAction(e -> {
+					dialog.close(); // Fermer le JFXDialog
+					ouvrirFenetreConfirmationQualite(); // 👈 Ouvrir la fenêtre de confirmation
+				});
+
+				dialog.show();
+
+				Platform.runLater(() -> {
+					StackPane overlayPane = (StackPane) dialog.lookup(".jfx-dialog-overlay-pane");
+					if (overlayPane != null) {
+						overlayPane.setStyle("-fx-background-color: transparent;");
+					}
+				});
+			}
+
+
 		 	
 		 	/******************************* Recuperer agents des qualite par plant *****************/
 		 	public List<UserDTO> fetchAgentsQualiteByPlant() {
@@ -1301,4 +1327,52 @@ public class Resultat {
 				           (traction2EchFin > minTraction && traction2EchFin < maxTraction);
 				}
 
+			 private void ouvrirFenetreConfirmationQualite() {
+			        try {
+			            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Front_java/ConfirmationQM.fxml"));
+			            Parent root = loader.load();
+
+			            // Obtenir le contrôleur de la fenêtre QM
+			            ConfirmationQualiteController controller = loader.getController();
+
+			            // 👉 Injecter la référence du contrôleur courant
+			            controller.setSertissageIDCResultController(this);
+
+			            Stage stage = new Stage();
+			            stage.initStyle(StageStyle.UNDECORATED);
+			            stage.setTitle("Confirmation de l'agent de qualité");
+
+			            Scene scene = new Scene(root);
+			            stage.setScene(scene);
+
+			            btnSuivant.setDisable(true);
+
+			            // Si tu veux le réactiver *au cas où* la fenêtre se ferme manuellement sans vérification
+			            stage.setOnHidden(event -> {
+			                // ne rien faire ici, on attend la confirmation depuis QM
+			            });
+
+			            stage.show();
+
+			        } catch (IOException e) {
+			            e.printStackTrace();
+			        }
+			    }
+
+			    public boolean activerSuivantSiAgentValide(int matricule, String plant) {
+			        boolean estAgentQualite = ConfirmationQualiteController.verifierAgentQualite(matricule, plant);
+			        if (estAgentQualite) {
+			            btnSuivant.setDisable(false);
+			            return true;
+			        } else {
+			            System.out.println("Utilisateur non autorisé");
+			            return false;
+			        }
+			    }
+
+			    private Locale getLocaleFromString(String langue) {
+				      if (langue == null) return new Locale("fr"); // langue par défaut
+				      if (langue.contains("ar")) return new Locale("ar");
+				      if (langue.contains("en")) return new Locale("en");
+				      return new Locale("fr");}
 }
