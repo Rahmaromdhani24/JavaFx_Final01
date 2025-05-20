@@ -314,7 +314,7 @@
              <FontAwesomeIcon glyphName="SIGN_OUT" size="2.5em" />
         </graphic>
       </Button>
-       <Button fx:id="btnClose" layoutX="1000.0" layoutY="-35.0" mnemonicParsing="false" onAction="#close" prefHeight="24.0" prefWidth="57.0" styleClass="close">
+       <!--Button fx:id="btnClose" layoutX="1000.0" layoutY="-35.0" mnemonicParsing="false" onAction="#close" prefHeight="24.0" prefWidth="57.0" styleClass="close">
               <graphic>
                    <FontAwesomeIcon glyphName="CLOSE" size="1.5em" />
                </graphic>
@@ -323,7 +323,7 @@
 	       <graphic>
 	            <FontAwesomeIcon glyphName="MINUS" size="1.5em" />
 	       </graphic>
-       </Button>
+       </Button-->
                <Label fx:id="titreChartMoyenne" layoutX="1100.0" layoutY="200.0" text="La Moyenne X̄">
                   <font>
                      <Font name="System Bold" size="16.0" />
