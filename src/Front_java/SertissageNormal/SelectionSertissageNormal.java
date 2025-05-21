@@ -33,7 +33,10 @@ import javafx.geometry.Pos;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -145,6 +148,31 @@ public class SelectionSertissageNormal{
     
     @FXML
     private ImageView clearImage;
+    @FXML
+    private Label labelMatricule ; 
+    
+    @FXML
+    private Label labelPlant ; 
+
+    @FXML
+    private Label  labelPoste ; 
+    
+    @FXML
+    private Label labelSegment ; 
+    
+    @FXML
+    private Label labelOperation ; 
+    
+    @FXML
+    private Label labelChoisirCodeControle ; 
+    
+    @FXML
+    private Label labelChoisirProjet ; 
+ 
+    @FXML
+    private Label labelSection , labelOutil , labelContact ; 
+    
+    
    
     private final HttpClient httpClient = HttpClient.newHttpClient(); // Client HTTP
 
@@ -182,11 +210,11 @@ public class SelectionSertissageNormal{
         afficherInfosOperateur();
         afficherDateSystem(); // Afficher la date du système
         afficherHeureSystem();
-        //populateComboBoxSections();
         loadCodesControles() ; 
         loadProjets() ; 
         chargerCodesEtDescriptions(); 
-        
+    	traduireLabels();
+
         if (SertissageNormaleInformations.numeroOutils != null) {
             searchField.setText(SertissageNormaleInformations.numeroOutils);
         }
@@ -646,4 +674,44 @@ public class SelectionSertissageNormal{
             return new ArrayList<>(); // Retourne une liste vide en cas d'erreur
         }
     }
+    /*********************************** Traduction ************************************************************/
+    private Locale getLocaleFromString(String langue) {
+        if (langue == null) return new Locale("fr"); // langue par défaut
+        if (langue.contains("ar")) return new Locale("ar");
+        if (langue.contains("en")) return new Locale("en");
+        return new Locale("fr");
+    }
+    private void traduireLabels() {
+        try {
+            Locale locale = getLocaleFromString(AppInformations.langueSelectionnee);
+            ResourceBundle bundle = ResourceBundle.getBundle("lang", locale);
+            System.out.println("🌍 langue sélectionnée dans Dashboard1 : " + locale.getLanguage());
+
+            labelMatricule.setText(bundle.getString("label.matricule"));
+            labelPlant.setText(bundle.getString("label.plant"));
+            labelSegment.setText(bundle.getString("label.segment"));
+            labelPoste.setText(bundle.getString("label.poste"));
+            labelOperation.setText(bundle.getString("label.operation"));
+            labelChoisirCodeControle.setText(bundle.getString("label.chooseControlCode"));
+            labelChoisirProjet.setText(bundle.getString("label.chooseProject"));
+            labelOutil.setText(bundle.getString("label.chooseOutil"));
+            labelContact.setText(bundle.getString("label.chooseContact"));
+            btnSuivant.setText(bundle.getString("boutonSuivant"));
+            description1.setText(bundle.getString("sertN.A"));
+            description2.setText(bundle.getString("sertN.S"));
+            description3.setText(bundle.getString("sertN.l"));
+            description4.setText(bundle.getString("sertN.R"));
+            description5.setText(bundle.getString("sertN.w"));
+            description6.setText(bundle.getString("sertN.M"));
+          
+
+
+        } catch (MissingResourceException e) {
+            System.out.println("❌ Erreur : Fichier de langue introuvable");
+            e.printStackTrace();
+        }
+    }
+
+
+
 }

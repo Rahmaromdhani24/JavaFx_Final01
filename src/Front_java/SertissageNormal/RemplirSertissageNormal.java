@@ -35,6 +35,9 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import com.jfoenix.controls.JFXButton;
@@ -1845,5 +1848,59 @@ public String fetchNumMaxCycle() {
         return "Erreur de connexion à l'API";
     }
 }
+/*********************************** Traduction ************************************************************/
+private Locale getLocaleFromString(String langue) {
+    if (langue == null) return new Locale("fr"); // langue par défaut
+    if (langue.contains("ar")) return new Locale("ar");
+    if (langue.contains("en")) return new Locale("en");
+    return new Locale("fr");}
+
+/*
+
+private void traduireLabels() {
+    try {
+        Locale locale = getLocaleFromString(AppInformations.langueSelectionnee);
+        ResourceBundle bundle = ResourceBundle.getBundle("lang", locale);
+        System.out.println("🌍 langue sélectionnée dans Dashboard1 : " + locale.getLanguage());
+
+        labelMatricule.setText(bundle.getString("label.matricule"));
+        labelPlant.setText(bundle.getString("label.plant"));
+        labelSegment.setText(bundle.getString("label.segment"));
+        labelPoste.setText(bundle.getString("label.poste"));
+        labelOperation.setText(bundle.getString("label.operation"));	         
+        btnPrecedant.setText(bundle.getString("label.precedent"));
+        
+        labelProjet.setText(bundle.getString("label.projet"));
+        labelSpecificationMesure.setText(bundle.getString("label.specification_mesure"));
+        labelNombreEch.setText(bundle.getString("label.nbreEchantillonsTorsadage"));
+        labelCodeControle.setText(bundle.getString("label.codeControle"));
+        labelNumeroCycle.setText(bundle.getString("label.numeroCycle"));
+        labelQuantiteAtteint.setText(bundle.getString("label.quantiteAtteintTorsadage"));
+        btnSuivant.setText(bundle.getString("button.valider"));
+        labelQuantiteTotal.setText(bundle.getString("label.quantiteTotal"));
+        labelNumCommande.setText(bundle.getString("label.numeroCommande"));
+        labelEch1.setText(bundle.getString("label.echantillon1"));
+        labelEch2.setText(bundle.getString("label.echantillon2"));
+        labelEch3.setText(bundle.getString("label.echantillon3"));
+        labelEch4.setText(bundle.getString("label.echantillon4"));
+        labelEch5.setText(bundle.getString("label.echantillon5"));
+        labelNumFils.setText(bundle.getString("label.numero_fils"));
+        label2.setText(bundle.getString("label.longueur_final_debut_commande"));
+        label3.setText(bundle.getString("label.longueur_bout_non_torsade_debut_cde_c1"));
+        label4.setText(bundle.getString("label.longueur_bout_non_torsade_debut_cde_c2"));
+        label5.setText(bundle.getString("label.longueur_bout_non_torsade_fin_cde_c1"));
+        label6.setText(bundle.getString("label.longueur_bout_non_torsade_fin_cde_c2"));
+        label7.setText(bundle.getString("label.decalage_max_debut_commande_c1"));
+        label8.setText(bundle.getString("label.decalage_max_debut_commande_c2"));
+        label9.setText(bundle.getString("label.decalage_max_fin_commande_c1"));
+        label10.setText(bundle.getString("label.decalage_max_fin_commande_c2"));
+        label12.setText(bundle.getString("label.longueur_final_fin_commande"));
+        label13.setText(bundle.getString("label.longueur_pas_fin_commande"));
+    } catch (MissingResourceException e) {
+        System.out.println("❌ Erreur : Fichier de langue introuvable");
+        e.printStackTrace();
+    }
+}
+*/
 
 }

@@ -43,7 +43,7 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="220.0" layoutY="30.0" text="Matricule :">
+                        <Label fx:id="labelMatricule"  layoutX="220.0" layoutY="30.0" text="Matricule :">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
@@ -53,7 +53,7 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="400.0" layoutY="30.0" text="Plant :">
+                        <Label  fx:id="labelPlant" layoutX="400.0" layoutY="30.0" text="Plant :">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
@@ -63,7 +63,7 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="670.0" layoutY="30.0" text="Poste : ">
+                        <Label fx:id="labelPoste" layoutX="670.0" layoutY="30.0" text="Poste : ">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
@@ -73,7 +73,7 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="820.0" layoutY="30.0" text="Opération :">
+                        <Label fx:id="labelOperation" layoutX="820.0" layoutY="30.0" text="Opération :">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
@@ -98,7 +98,7 @@
                        <FontAwesomeIcon glyphName="MINUS" size="1.5em" />
                    </graphic>
                    </Button>
-                        <Label layoutX="528.0" layoutY="30.0" text="Segment :">
+                        <Label fx:id="labelSegment" layoutX="528.0" layoutY="30.0" text="Segment :">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
@@ -123,7 +123,7 @@
             <children>
             <Pane layoutX="110.0" layoutY="125.0" prefHeight="50.0" prefWidth="245.0" style="-fx-background-color: #023770;" styleClass="radiusBtn">
                <children>
-                  <Label layoutX="60.0" layoutY="12.0" text="Choisir projet " textFill="WHITE">
+                  <Label fx:id="labelChoisirProjet" layoutX="60.0" layoutY="12.0" text="Choisir projet " textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -149,7 +149,7 @@
             </Pane>
             <Pane layoutX="110.0" layoutY="330.0" prefHeight="50.0" prefWidth="245.0" style="-fx-background-color: #023770;" styleClass="radiusBtn">
                <children>
-                  <Label layoutX="20.0" layoutY="12.0" text="Sélectionner Section Fil" textFill="WHITE">
+                  <Label fx:id="labelSection"  layoutX="20.0" layoutY="12.0" text="Sélectionner Section Fil" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -222,7 +222,7 @@
                </Pane>
                <Pane layoutX="110.0" layoutY="190.0" prefHeight="50.0" prefWidth="245.0" style="-fx-background-color: #023770;" styleClass="radiusBtn">
                   <children>
-                     <Label layoutX="10.0" layoutY="12.0" text="    Saisir  Numéro outil" textFill="WHITE">
+                     <Label fx:id="labelOutil" layoutX="10.0" layoutY="12.0" text="    Saisir  Numéro outil" textFill="WHITE">
                         <font>
                            <Font name="System Bold" size="18.0" />
                         </font>
@@ -232,7 +232,7 @@
                <TextField fx:id="searchField" layoutX="500.0" layoutY="190.0" prefWidth="200.0" promptText="🔍 Rechercher..." styleClass="search-field" />
                <Pane layoutX="110.0" layoutY="260.0" prefHeight="50.0" prefWidth="245.0" style="-fx-background-color: #023770;" styleClass="radiusBtn">
                   <children>
-                     <Label layoutX="5.0" layoutY="12.0" text="        Numéro de contact" textFill="WHITE">
+                     <Label fx:id="labelContact" layoutX="5.0" layoutY="12.0" text="        Numéro de contact" textFill="WHITE">
                         <font>
                            <Font name="System Bold" size="18.0" />
                         </font>
@@ -242,7 +242,7 @@
                <ComboBox fx:id="listeContacts" layoutX="500.0" layoutY="255.0" prefWidth="200.0" styleClass="liste-projets-combo" />
             <Pane layoutX="110.0" layoutY="400.0" prefHeight="50.0" prefWidth="245.0" style="-fx-background-color: #023770;" styleClass="radiusBtn">
                <children>
-                  <Label layoutX="20.0" layoutY="12.0" text="Choisir code de  contrôle" textFill="WHITE">
+                  <Label fx:id="labelChoisirCodeControle" layoutX="20.0" layoutY="12.0" text="Choisir code de  contrôle" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>

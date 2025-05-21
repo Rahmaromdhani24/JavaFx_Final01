@@ -1,9 +1,6 @@
 package Front_java.Torsadage;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -12,8 +9,6 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import Front_java.Configuration.AppInformations;
-import Front_java.Configuration.SertissageNormaleInformations;
-import Front_java.Configuration.SoudureInformations;
 import Front_java.Modeles.OperateurInfo;
 import Front_java.Modeles.TorsadageDTO;
 import Front_java.Torsadage.loading.LoadingTorsadage;
@@ -41,7 +36,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
-
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;

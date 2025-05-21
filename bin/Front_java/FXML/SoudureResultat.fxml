@@ -158,16 +158,6 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="1057.0" layoutY="15.0" text="Fréquence de contrôle :">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="freqControle" layoutX="1227.0" layoutY="15.0" text="3025">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Label>
                      </children>
                   </Pane>
                </children>
