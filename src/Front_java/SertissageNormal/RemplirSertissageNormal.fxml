@@ -45,7 +45,7 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="220.0" layoutY="30.0" text="Matricule :">
+                        <Label fx:id="labelMatricule"  layoutX="220.0" layoutY="30.0" text="Matricule :">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
@@ -55,7 +55,7 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="400.0" layoutY="30.0" text="Plant :">
+                        <Label   fx:id="labelPlant" layoutX="400.0" layoutY="30.0" text="Plant :">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
@@ -65,7 +65,7 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="670.0" layoutY="30.0" text="Poste : ">
+                        <Label fx:id="labelPoste" layoutX="670.0" layoutY="30.0" text="Poste : ">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
@@ -75,7 +75,7 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="820.0" layoutY="30.0" text="Opération :">
+                        <Label fx:id="labelOperation"  layoutX="820.0" layoutY="30.0" text="Opération :">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
@@ -100,7 +100,7 @@
                        <FontAwesomeIcon glyphName="MINUS" size="1.5em" />
                    </graphic>
                    </Button>
-                        <Label layoutX="528.0" layoutY="30.0" text="Segment :">
+                        <Label fx:id="labelSegment" layoutX="528.0" layoutY="30.0" text="Segment :">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
@@ -140,7 +140,7 @@
       <center>
          <AnchorPane prefHeight="584.0" prefWidth="1360.0" stylesheets="@RemplirSertissageNormal.css" BorderPane.alignment="CENTER">
             <children>
-               <Label layoutX="108.0" layoutY="30.0" text="Projet :">
+               <Label fx:id="labelProjet" layoutX="100.0" layoutY="30.0" text="Projet :">
                 <font>
                               <Font name="System" size="16.0" />
                            </font>
@@ -150,7 +150,7 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-               <Label layoutX="320.0" layoutY="30.0" text="Séction de fil  :">
+               <Label fx:id="labelSimpleSection" layoutX="315.0" layoutY="30.0" text="Séction de fil  :">
                 <font>
                               <Font name="System" size="16.0" />
                            </font>
@@ -160,7 +160,7 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-               <Label layoutX="1100.0" layoutY="30.0" text="Code de controle : ">
+               <Label fx:id="labelCodeControle" layoutX="1100.0" layoutY="30.0" text="Code de controle : ">
                 <font>
                               <Font name="System" size="16.0" />
                            </font>
@@ -170,7 +170,7 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-               <Label layoutX="840.0" layoutY="30.0" text="Numéro d'outil : ">
+               <Label fx:id="labelSimpleOutil" layoutX="840.0" layoutY="30.0" text="Numéro d'outil : ">
                 <font>
                                <Font name="System" size="16.0" />
                            </font>
@@ -182,7 +182,7 @@
               </Label>
                <!--Label layoutX="500.0" layoutY="73.0" styleClass="matrix-grid-title" text="Numéro Courant : " />
                <Label fx:id="nbrCycle" layoutX="700.0" layoutY="73.0" styleClass="matrix-grid-title" text="" /-->
-               <Label layoutX="560.0" layoutY="30.0" text="Numéro Contact :">
+               <Label fx:id="labelSimpleContact" layoutX="560.0" layoutY="30.0" text="Numéro Contact :">
                   <font>
                      <Font size="16.0" />
                   </font>
@@ -240,29 +240,29 @@
                   </padding>
         
          </GridPane>
-               <Label layoutX="500.0" layoutY="60.0" styleClass="matrix-grid-title" text="Numéro Courant : " />
+               <Label fx:id="labelNumeroCycle"  layoutX="500.0" layoutY="60.0" styleClass="matrix-grid-title" text="Numéro Courant : " />
                <Label fx:id="nbrCycle" layoutX="700.0" layoutY="60.0" styleClass="matrix-grid-title" text="" />
           <GridPane hgap="2" layoutX="53.0" layoutY="100.0" prefHeight="490.0" prefWidth="873.0" style="-fx-padding: 1px; -fx-border-color: gray; -fx-border-width: 2px; -fx-grid-lines-visible: true;" vgap="2">
     <padding>
         <Insets bottom="10" left="10" right="10" top="10" />
     </padding>
-    <Label prefHeight="17.0" prefWidth="139.0" styleClass="labelll" text="Échantillon 1" GridPane.columnIndex="2">
+    <Label fx:id="labelEch1" prefHeight="17.0" prefWidth="139.0" styleClass="labelll" text="Échantillon 1" GridPane.columnIndex="2">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font></Label>
-    <Label prefHeight="17.0" prefWidth="139.0" style="-fx-font-weight: bold;" styleClass="labelll" text=" Échantillon 2" GridPane.columnIndex="3">
+    <Label fx:id="labelEch2" prefHeight="17.0" prefWidth="139.0" style="-fx-font-weight: bold;" styleClass="labelll" text=" Échantillon 2" GridPane.columnIndex="3">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font></Label>
-    <Label prefHeight="17.0" prefWidth="145.0" style="-fx-font-weight: bold;" styleClass="labelll" text="Échantillon 3" GridPane.columnIndex="4">
+    <Label fx:id="labelEch3" prefHeight="17.0" prefWidth="145.0" style="-fx-font-weight: bold;" styleClass="labelll" text="Échantillon 3" GridPane.columnIndex="4">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font></Label>
-    <Label prefHeight="17.0" prefWidth="154.0" style="-fx-font-weight: bold;" styleClass="labelll" text=" Échantillon Fin" GridPane.columnIndex="5">
+    <Label fx:id="labelEchFin" prefHeight="17.0" prefWidth="154.0" style="-fx-font-weight: bold;" styleClass="labelll" text=" Échantillon Fin" GridPane.columnIndex="5">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font></Label>
-    <Label prefHeight="17.0" prefWidth="204.0" styleClass="labelll" text="Hauteur de sertissage  (mm)" GridPane.columnIndex="1" GridPane.rowIndex="1">
+    <Label fx:id="labelHauteurSertissage" prefHeight="17.0" prefWidth="204.0" styleClass="labelll" text="Hauteur de sertissage  (mm)" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font></Label>
@@ -284,7 +284,7 @@
     <TextField fx:id="hauteurSertissageEch2" styleClass="text-field-nombre-lot" GridPane.columnIndex="3" GridPane.rowIndex="1" />
     <TextField fx:id="hauteurSertissageEch3" styleClass="text-field-nombre-lot" GridPane.columnIndex="4" GridPane.rowIndex="1" />
     <TextField fx:id="hauteurSertissageEchFin" styleClass="text-field-nombre-lot" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-    <Label prefHeight="17.0" prefWidth="205.0" styleClass="labelll" text="                     Série Produite" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+    <Label  prefHeight="17.0" prefWidth="205.0" styleClass="labelll" text="                     Série Produite" GridPane.columnIndex="1" GridPane.rowIndex="6" />
     <TextField fx:id="largeurSertissageEchFin" styleClass="text-field-nombre-lot" GridPane.columnIndex="5" GridPane.rowIndex="2" />
     <TextField fx:id="hauteurIsolantEchFin" styleClass="text-field-nombre-lot" GridPane.columnIndex="5" GridPane.rowIndex="3" />
     <TextField fx:id="largeurIsolantEchFin" styleClass="text-field-nombre-lot" GridPane.columnIndex="5" GridPane.rowIndex="4" />
@@ -315,7 +315,7 @@
                   <children>
                      <Pane layoutX="2.0" layoutY="235.0" prefHeight="50.0" prefWidth="320.0" style="-fx-border-color: gray; -fx-border-width: 2px; -fx-background-color: #f4f4f4;">
                         <children>
-                           <Label layoutX="6.0" layoutY="13.0" prefHeight="21.0" prefWidth="165.0" text="Largeur Isolant :Tol / :">
+                           <Label fx:id="labelSimpleLargeurIsolant" layoutX="6.0" layoutY="13.0" prefHeight="21.0" prefWidth="165.0" text="Largeur Isolant :Tol / :">
                               <font>
                                  <Font name="System Bold" size="15.0" />
                               </font>
@@ -328,7 +328,7 @@
                      </Pane>
                      <Pane layoutX="2.0" layoutY="187.0" prefHeight="50.0" prefWidth="320.0" style="-fx-border-color: gray; -fx-border-width: 2px; -fx-background-color: #f4f4f4;">
                         <children>
-                           <Label layoutX="7.0" layoutY="13.0" prefHeight="21.0" prefWidth="160.0" text="Hauteur isolant /Tol : ">
+                           <Label fx:id="labelSimpleHauteurIsolant" layoutX="7.0" layoutY="13.0" prefHeight="21.0" prefWidth="160.0" text="Hauteur isolant /Tol : ">
                               <font>
                                  <Font name="System Bold" size="15.0" />
                               </font>
@@ -341,7 +341,7 @@
                      </Pane>
                      <Pane layoutX="2.0" layoutY="139.0" prefHeight="50.0" prefWidth="320.0" style="-fx-border-color: gray; -fx-border-width: 2px; -fx-background-color: #f4f4f4;">
                         <children>
-                           <Label layoutX="5.0" layoutY="13.0" prefHeight="21.0" prefWidth="203.0" text="Largeur de sertissage / Tol : ">
+                           <Label fx:id="labelSimpleLargeurSertissage" layoutX="5.0" layoutY="13.0" prefHeight="21.0" prefWidth="203.0" text="Largeur de sertissage / Tol : ">
                               <font>
                                  <Font name="System Bold" size="15.0" />
                               </font>
@@ -354,7 +354,7 @@
                      </Pane>
                      <Pane layoutX="2.0" layoutY="90.0" prefHeight="50.0" prefWidth="320.0" style="-fx-border-color: gray; -fx-border-width: 2px; -fx-background-color: #f4f4f4;">
                         <children>
-                           <Label layoutX="6.0" layoutY="13.0" prefHeight="21.0" prefWidth="207.0" text="Hauteur de sertissage / Tol :">
+                           <Label fx:id="labelSimpleHauteurSertissage" layoutX="6.0" layoutY="13.0" prefHeight="21.0" prefWidth="207.0" text="Hauteur de sertissage / Tol :">
                               <font>
                                  <Font name="System Bold" size="15.0" />
                               </font>
@@ -368,7 +368,7 @@
                   </children></Pane>
                <Pane layoutX="55.0" layoutY="348.0" prefHeight="50.0" prefWidth="321.0" style="-fx-border-color: gray; -fx-border-width: 2px; -fx-background-color: #f4f4f4;">
                   <children>
-                     <Label layoutX="7.0" layoutY="13.0" prefHeight="21.0" prefWidth="155.0" text="Traction / Minimum : ">
+                     <Label fx:id="labelSimpleTraction" layoutX="7.0" layoutY="13.0" prefHeight="21.0" prefWidth="155.0" text="Traction / Minimum : ">
                         <font>
                            <Font name="System Bold" size="15.0" />
                         </font>
@@ -381,7 +381,7 @@
                </Pane>
                <Pane layoutX="55.0" layoutY="396.0" prefHeight="50.0" prefWidth="321.0" style="-fx-background-color: #f4f4f4; -fx-border-width: 2px; -fx-border-color: gray;">
                   <children>
-                     <Label layoutX="74.0" layoutY="12.0" prefHeight="20.0" prefWidth="175.0" text="            Produite ">
+                     <Label fx:id="labelProduit" layoutX="74.0" layoutY="12.0" prefHeight="20.0" prefWidth="175.0" text="            Produite ">
                         <font>
                            <Font name="System Bold" size="15.0" />
                         </font>
@@ -390,7 +390,7 @@
                </Pane>
                <Pane layoutX="55.0" layoutY="444.0" prefHeight="50.0" prefWidth="321.0" style="-fx-background-color: #f4f4f4; -fx-border-width: 2px; -fx-border-color: gray;">
                   <children>
-                     <Label layoutX="77.0" layoutY="14.0" prefHeight="20.0" prefWidth="177.0" text="         Série Produite ">
+                     <Label fx:id="labelSerieProduit" layoutX="77.0" layoutY="14.0" prefHeight="20.0" prefWidth="177.0" text="         Série Produite ">
                         <font>
                            <Font name="System Bold" size="15.0" />
                         </font>
@@ -409,7 +409,7 @@
                </Pane>
                <Pane layoutX="55.0" layoutY="492.0" prefHeight="50.0" prefWidth="321.0" style="-fx-background-color: #f4f4f4; -fx-border-width: 2px; -fx-border-color: gray;">
                   <children>
-                     <Label layoutX="77.0" layoutY="14.0" prefHeight="20.0" prefWidth="177.0" text="      Quantité du cycle ">
+                     <Label fx:id="labelQuantiteCycle" layoutX="77.0" layoutY="14.0" prefHeight="20.0" prefWidth="177.0" text="      Quantité du cycle ">
                         <font>
                            <Font name="System Bold" size="15.0" />
                         </font>
@@ -423,7 +423,7 @@
                </Pane>
                <Pane layoutX="54.0" layoutY="540.0" prefHeight="50.0" prefWidth="322.0" style="-fx-background-color: #f4f4f4; -fx-border-width: 2px; -fx-border-color: gray;">
                   <children>
-                     <Label layoutX="77.0" layoutY="14.0" prefHeight="20.0" prefWidth="177.0" text="    Machine de traction ">
+                     <Label fx:id="labelMachineTraction" layoutX="77.0" layoutY="14.0" prefHeight="20.0" prefWidth="177.0" text="    Machine de traction ">
                         <font>
                            <Font name="System Bold" size="15.0" />
                         </font>

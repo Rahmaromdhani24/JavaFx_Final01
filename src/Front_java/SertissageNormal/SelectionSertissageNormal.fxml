@@ -222,7 +222,7 @@
                </Pane>
                <Pane layoutX="110.0" layoutY="190.0" prefHeight="50.0" prefWidth="245.0" style="-fx-background-color: #023770;" styleClass="radiusBtn">
                   <children>
-                     <Label fx:id="labelOutil" layoutX="10.0" layoutY="12.0" text="    Saisir  Numéro outil" textFill="WHITE">
+                     <Label fx:id="labelOutil" layoutX="20.0" layoutY="15.0" text="    Saisir  Numéro outil" textFill="WHITE" prefWidth="200.0">
                         <font>
                            <Font name="System Bold" size="18.0" />
                         </font>
@@ -232,7 +232,7 @@
                <TextField fx:id="searchField" layoutX="500.0" layoutY="190.0" prefWidth="200.0" promptText="🔍 Rechercher..." styleClass="search-field" />
                <Pane layoutX="110.0" layoutY="260.0" prefHeight="50.0" prefWidth="245.0" style="-fx-background-color: #023770;" styleClass="radiusBtn">
                   <children>
-                     <Label fx:id="labelContact" layoutX="5.0" layoutY="12.0" text="        Numéro de contact" textFill="WHITE">
+                     <Label fx:id="labelContact" layoutX="20.0" layoutY="15.0" text="        Numéro de contact" textFill="WHITE" prefWidth="200.0">
                         <font>
                            <Font name="System Bold" size="18.0" />
                         </font>

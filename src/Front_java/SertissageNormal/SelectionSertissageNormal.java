@@ -7,8 +7,6 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import Front_java.Configuration.AppInformations;
 import Front_java.Configuration.SertissageNormaleInformations;
-import Front_java.Configuration.SoudureInformations;
-import Front_java.Configuration.SoudureInformationsCodeB;
 import Front_java.Modeles.OperateurInfo;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
@@ -30,7 +28,6 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -38,14 +35,11 @@ import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
-
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
-
 import javafx.animation.KeyFrame;
 import javafx.util.Duration;
 
@@ -548,13 +542,24 @@ public class SelectionSertissageNormal{
                     );
 
                     Platform.runLater(() -> {
+                    	 Locale locale = getLocaleFromString(AppInformations.langueSelectionnee);
+                    	 ResourceBundle bundle = ResourceBundle.getBundle("lang", locale);
+                    	 
                         List<Label> descriptionsLabels = List.of(description1, description2, description3, description4, description5, description6);
 
                         int index = 0;
                         for (Map.Entry<String, String> entry : codesDescriptions.entrySet()) {
                             if (index >= descriptionsLabels.size()) break; // Limiter à 6
 
-                            descriptionsLabels.get(index).setText(entry.getKey() + " = " + entry.getValue());
+                           // descriptionsLabels.get(index).setText(entry.getKey() + " = " + entry.getValue());
+                           // index++;
+                            String code = entry.getKey();
+                            String translationKey = "sertN." + code;
+                            String traduction = bundle.containsKey(translationKey)
+                                    ? bundle.getString(translationKey)
+                                    : entry.getValue(); // fallback
+
+                            descriptionsLabels.get(index).setText(code + " = " + traduction);
                             index++;
                         }
 
@@ -685,27 +690,25 @@ public class SelectionSertissageNormal{
         try {
             Locale locale = getLocaleFromString(AppInformations.langueSelectionnee);
             ResourceBundle bundle = ResourceBundle.getBundle("lang", locale);
-            System.out.println("🌍 langue sélectionnée dans Dashboard1 : " + locale.getLanguage());
-
+            System.out.println("langue sélectionnée dans Dashboard1 : " + locale.getLanguage());            
             labelMatricule.setText(bundle.getString("label.matricule"));
             labelPlant.setText(bundle.getString("label.plant"));
             labelSegment.setText(bundle.getString("label.segment"));
             labelPoste.setText(bundle.getString("label.poste"));
             labelOperation.setText(bundle.getString("label.operation"));
             labelChoisirCodeControle.setText(bundle.getString("label.chooseControlCode"));
-            labelChoisirProjet.setText(bundle.getString("label.chooseProject"));
+            labelChoisirProjet.setText(bundle.getString("label.projetSertissageNormal"));
+            labelSection.setText(bundle.getString("label.selectWireSectionSertissageNormal"));
             labelOutil.setText(bundle.getString("label.chooseOutil"));
             labelContact.setText(bundle.getString("label.chooseContact"));
             btnSuivant.setText(bundle.getString("boutonSuivant"));
             description1.setText(bundle.getString("sertN.A"));
             description2.setText(bundle.getString("sertN.S"));
-            description3.setText(bundle.getString("sertN.l"));
+            description3.setText(bundle.getString("sertN.L"));
             description4.setText(bundle.getString("sertN.R"));
-            description5.setText(bundle.getString("sertN.w"));
+            description5.setText(bundle.getString("sertN.W"));
             description6.setText(bundle.getString("sertN.M"));
           
-
-
         } catch (MissingResourceException e) {
             System.out.println("❌ Erreur : Fichier de langue introuvable");
             e.printStackTrace();
